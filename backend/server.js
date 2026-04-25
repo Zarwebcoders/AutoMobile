@@ -18,7 +18,11 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allows all origins for now as requested
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Basic route
 app.get('/', (req, res) => {
