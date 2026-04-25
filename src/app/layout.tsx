@@ -19,6 +19,10 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "MOBEX | Premium Auto Parts & Accessories",
   description: "USA's number 1 supplier! With over 250+ branches nationwide and 130,000 parts available.",
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  }
 };
 
 export default function RootLayout({

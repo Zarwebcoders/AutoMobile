@@ -38,11 +38,11 @@ const Login = () => {
         className="w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 lg:p-12 shadow-2xl relative z-10"
       >
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-accent mb-6 shadow-xl shadow-accent/20">
-            <LogIn className="text-dark-blue w-10 h-10" />
+          <div className="flex justify-center mb-6">
+            <img src="/logo.png" alt="MOBEX" className="h-16 w-auto object-contain brightness-0 invert" />
           </div>
-          <h1 className="text-4xl font-black text-white italic font-oswald uppercase tracking-tighter">
-            MOB<span className="text-accent">EX</span> ADMIN
+          <h1 className="text-2xl font-black text-white italic font-oswald uppercase tracking-tighter">
+            ADMIN <span className="text-accent underline">DASHBOARD</span>
           </h1>
           <p className="text-slate-400 font-bold uppercase text-[10px] tracking-widest mt-2">
             Secure Management Access

@@ -45,9 +45,14 @@ export default function LoginPage() {
             <Link href="/" className="inline-flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-accent transition-colors">
               <ArrowLeft size={14} /> Back to website
             </Link>
-            <div className="flex flex-col gap-2">
-              <span className="text-[10px] font-black text-accent uppercase tracking-widest leading-none">Authentication</span>
-              <h1 className="text-4xl font-black text-dark-blue uppercase tracking-tight italic font-oswald">Sign <span className="text-accent underline decoration-4 underline-offset-8">In</span></h1>
+            <div className="flex flex-col gap-4">
+              <Link href="/">
+                <img src="/logo.png" alt="MOBEX" className="h-12 w-auto object-contain" />
+              </Link>
+              <div className="flex flex-col gap-2">
+                <span className="text-[10px] font-black text-accent uppercase tracking-widest leading-none">Authentication</span>
+                <h1 className="text-4xl font-black text-dark-blue uppercase tracking-tight italic font-oswald">Sign <span className="text-accent underline decoration-4 underline-offset-8">In</span></h1>
+              </div>
             </div>
           </div>
 
@@ -114,8 +119,8 @@ export default function LoginPage() {
         </div>
 
         {/* Background branding */}
-        <div className="absolute top-0 right-0 p-8 opacity-[0.02] select-none pointer-events-none">
-          <h2 className="text-[12rem] font-black text-dark-blue uppercase italic tracking-tighter leading-none">MOBEX</h2>
+        <div className="absolute top-0 right-0 p-8 opacity-[0.03] select-none pointer-events-none">
+          <img src="/logo.png" alt="" className="w-[400px] h-auto object-contain grayscale" />
         </div>
       </motion.div>
     </div>

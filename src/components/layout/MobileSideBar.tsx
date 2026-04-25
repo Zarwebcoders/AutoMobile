@@ -237,7 +237,17 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
               className="absolute top-0 right-0 bottom-0 w-[300px] bg-white flex flex-col shadow-2xl"
             >
               {/* User Header */}
-              <div className="bg-[#004b7c] p-6 flex items-center justify-between text-white">
+              <div className="bg-[#004b7c] p-6 flex flex-col gap-6 text-white">
+                 <div className="flex items-center justify-between">
+                    <img src="/logo.png" alt="MOBEX" className="h-8 w-auto object-contain brightness-0 invert" />
+                    <Link 
+                      href="/login" 
+                      onClick={onClose}
+                      className="px-3 py-1.5 border border-white/30 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-dark-blue transition-all"
+                    >
+                      Login
+                    </Link>
+                 </div>
                  <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center bg-white/5">
                       <User size={24} strokeWidth={1.5} />
@@ -247,13 +257,6 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
                       <p className="text-[10px] font-bold opacity-60 uppercase tracking-widest leading-none mt-1">For better experience login</p>
                     </div>
                  </div>
-                 <Link 
-                   href="/my-account" 
-                   onClick={onClose}
-                   className="px-3 py-2 border border-white/30 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-dark-blue transition-all"
-                 >
-                   Login
-                 </Link>
               </div>
 
               {/* Close Button - Floats over Backdrop */}
