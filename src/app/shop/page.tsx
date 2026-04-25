@@ -69,6 +69,7 @@ export default function ShopPage() {
 function ShopContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('query')?.toLowerCase() || '';
+  const categoryParam = searchParams.get('category')?.toLowerCase() || '';
   const minPrice = Number(searchParams.get('min')) || 0;
   const maxPrice = Number(searchParams.get('max')) || 10000;
 
@@ -97,12 +98,24 @@ function ShopContent() {
     .filter(p => !onlySale || p.badge === 'Sale')
     .filter(p => p.price >= minPrice && p.price <= maxPrice)
     .filter(p => {
-      if (!query) return true;
-      return (
-        p.name.toLowerCase().includes(query) ||
-        (p.category?.toLowerCase() || '').includes(query) ||
-        p.brand.toLowerCase().includes(query)
-      );
+      // Filter by category param if present
+      if (categoryParam) {
+        const pCategory = (p.category?.name || p.category || '').toLowerCase();
+        if (!pCategory.includes(categoryParam) && !categoryParam.includes(pCategory)) {
+          return false;
+        }
+      }
+      
+      // Filter by query param if present
+      if (query) {
+        return (
+          p.name.toLowerCase().includes(query) ||
+          (p.category?.name || p.category || '').toLowerCase().includes(query) ||
+          p.brand.toLowerCase().includes(query)
+        );
+      }
+      
+      return true;
     })
     .sort((a, b) => {
       if (sortBy === 'price-low') return a.price - b.price;

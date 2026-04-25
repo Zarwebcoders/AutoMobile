@@ -24,19 +24,65 @@ interface MegaMenuProps {
   onClose: () => void;
 }
 
+const INITIAL_CATEGORIES = [
+  {
+    _id: '1',
+    id: 'belts-chains-rollers',
+    name: 'Belts, chains, rollers',
+    icon: 'cog',
+    groups: [
+      {
+        title: 'Air conditioning',
+        items: [
+          { name: 'Condenser', href: '/shop?category=air-conditioning&query=condenser' },
+          { name: 'Ac compressor', href: '/shop?category=air-conditioning&query=ac-compressor' },
+          { name: 'Heat exchanger', href: '/shop?category=air-conditioning&query=heat-exchanger' },
+          { name: 'Receiver drier', href: '/shop?category=air-conditioning&query=receiver-drier' },
+          { name: 'Heater control valve', href: '/shop?category=air-conditioning&query=heater-control-valve' },
+          { name: 'View all', href: '/shop?category=air-conditioning', isViewAll: true }
+        ]
+      },
+      {
+        title: 'Damping',
+        items: [
+          { name: 'Coil spring', href: '/shop?category=damping&query=coil-spring' },
+          { name: 'Leaf spring', href: '/shop?category=damping&query=leaf-spring' },
+          { name: 'Shock absorber', href: '/shop?category=damping&query=shock-absorber' },
+          { name: 'Springs', href: '/shop?category=damping&query=springs' },
+          { name: 'Hydraulic oil', href: '/shop?category=damping&query=hydraulic-oil' },
+          { name: 'View all', href: '/shop?category=damping', isViewAll: true }
+        ]
+      },
+      {
+        title: 'Brakes',
+        items: [
+          { name: 'Brake discs', href: '/shop?category=brakes&query=brake-discs' },
+          { name: 'Brake pad wear sensor', href: '/shop?category=brakes&query=brake-pad-wear-sensor' },
+          { name: 'Brake pads', href: '/shop?category=brakes&query=brake-pads' },
+          { name: 'Drum brake', href: '/shop?category=brakes&query=drum-brake' },
+          { name: 'Brake drum', href: '/shop?category=brakes&query=brake-drum' },
+          { name: 'View all', href: '/shop?category=brakes', isViewAll: true }
+        ]
+      }
+    ]
+  }
+];
+
 export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
-  const [categoriesData, setCategoriesData] = useState<any[]>([]);
-  const [activeCategory, setActiveCategory] = useState<any>(null);
+  const [categoriesData, setCategoriesData] = useState<any[]>(INITIAL_CATEGORIES);
+  const [activeCategory, setActiveCategory] = useState<any>(INITIAL_CATEGORIES[0]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetch = async () => {
       try {
         const data = await getCategories();
-        setCategoriesData(data);
-        if (data.length > 0) setActiveCategory(data[0]);
+        if (data && data.length > 0) {
+          setCategoriesData(data);
+          setActiveCategory(data[0]);
+        }
       } catch (err) {
-        console.error(err);
+        console.error('Failed to fetch categories:', err);
       } finally {
         setLoading(false);
       }
@@ -91,7 +137,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
             className="relative w-full max-w-[1300px] h-fit max-h-[calc(100vh-160px)] bg-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] flex overflow-hidden border border-gray-100 rounded-b-xl"
           >
             {/* Sidebar */}
-            <div className="w-[280px] bg-gray-50 border-r border-gray-100 overflow-y-auto">
+            <div className="w-[280px] bg-gray-50 border-r border-gray-100 overflow-y-auto custom-scrollbar">
               <nav className="flex flex-col">
                 {categoriesData.map((category) => (
                   <div 
@@ -126,32 +172,33 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
             <div className="flex-1 bg-white flex">
               {/* Sub-categories Grid */}
               <div className="flex-1 p-10 overflow-y-auto custom-scrollbar">
-                <div className="grid grid-cols-3 gap-x-10 gap-y-12">
-                  {activeCategory?.subcategories && activeCategory.subcategories.length > 0 ? (
-                    <div className="col-span-3">
-                       <h3 className="text-xl font-black text-[#034C8C] uppercase mb-8 border-b-2 border-accent inline-block pb-1">
-                          {activeCategory.name}
-                       </h3>
-                       <div className="grid grid-cols-3 gap-8">
-                         {activeCategory.subcategories.map((sub: any, i: number) => (
-                            <div key={i} className="group">
-                               <Link 
-                                 href={sub.href || `/shop?category=${activeCategory.id}&query=${sub.name}`}
-                                 onClick={onClose}
-                                 className={cn(
-                                   "text-[14px] font-bold transition-all block py-2",
-                                   sub.isViewAll ? "text-[#ea1d22] uppercase tracking-wider mt-4 flex items-center gap-2" : "text-gray-500 hover:text-dark-blue"
-                                 )}
-                               >
-                                 {sub.name}
-                                 {sub.isViewAll && <ChevronRightCircle size={14} />}
-                               </Link>
-                            </div>
-                         ))}
-                       </div>
-                    </div>
+                <div className="grid grid-cols-4 gap-x-8 gap-y-10 w-full">
+                  {activeCategory?.groups && activeCategory.groups.length > 0 ? (
+                    activeCategory.groups.map((group: any, idx: number) => (
+                      <div key={idx} className="flex flex-col gap-5">
+                        <h3 className="text-[14px] font-black text-[#034C8C] uppercase border-b border-gray-100 pb-2 tracking-tight">
+                          {group.title}
+                        </h3>
+                        <div className="flex flex-col gap-1.5">
+                          {group.items.map((item: any, i: number) => (
+                            <Link 
+                              key={i}
+                              href={item.href}
+                              onClick={onClose}
+                              className={cn(
+                                "text-[13px] font-bold transition-all hover:text-[#ea1d22] leading-tight",
+                                item.isViewAll ? "text-[#ea1d22] uppercase tracking-wider mt-2 flex items-center gap-1 text-[11px]" : "text-gray-500"
+                              )}
+                            >
+                              {item.name}
+                              {item.isViewAll && <ChevronRight size={12} />}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))
                   ) : (
-                    <div className="col-span-3 flex items-center justify-center h-48 text-gray-300 italic">
+                    <div className="col-span-4 flex items-center justify-center h-48 text-gray-300 italic">
                       {loading ? 'Loading...' : 'More categories coming soon...'}
                     </div>
                   )}

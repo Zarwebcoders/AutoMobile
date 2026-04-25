@@ -11,11 +11,16 @@ const CategorySchema = new mongoose.Schema({
     required: [true, 'Please add a category name'],
   },
   icon: String,
-  subcategories: [
+  groups: [
     {
-      name: String,
-      href: String,
-      isViewAll: Boolean,
+      title: String,
+      items: [
+        {
+          name: String,
+          href: String,
+          isViewAll: Boolean,
+        }
+      ]
     }
   ],
   createdAt: {
