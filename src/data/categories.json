@@ -1,0 +1,51 @@
+[
+  {
+    "id": "air-conditioning",
+    "name": "Air conditioning",
+    "icon": "cog",
+    "subCategories": [
+      {
+        "title": "A/C COMPRESSOR",
+        "links": ["Compressor components", "Magnetic clutch"]
+      },
+      {
+        "title": "CONDENSER",
+        "links": ["A/C condenser", "Mounting"]
+      },
+      {
+        "title": "EVAPORATOR",
+        "links": ["Expansion valve", "Heater core"]
+      }
+    ]
+  },
+  {
+    "id": "brakes",
+    "name": "Brakes",
+    "icon": "disc",
+    "subCategories": [
+      {
+        "title": "DISC BRAKES",
+        "links": ["Brake pads", "Brake discs", "Brake calipers"]
+      },
+      {
+        "title": "DRUM BRAKES",
+        "links": ["Brake shoes", "Brake drums", "Wheel cylinders"]
+      }
+    ]
+  },
+  {
+    "id": "engine",
+    "name": "Engine",
+    "icon": "layers",
+    "subCategories": [
+      {
+        "title": "CYLINDER HEAD",
+        "links": ["Gaskets", "Cylinder head bolts", "Valve cover"]
+      },
+      {
+        "title": "CRANKSHAFT",
+        "links": ["Main bearings", "Connecting rod", "Pistons"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-blue: #05111b;
+  --color-accent: #ea1d22;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-slate-900 font-sans;
+  }
+}
+
+.admin-card {
+  @apply bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden;
+}
+
+.admin-btn {
+  @apply px-6 py-2.5 rounded-xl font-bold transition-all transform active:scale-95;
+}
+
+.admin-btn-primary {
+  @apply px-6 py-2.5 rounded-xl font-bold transition-all transform active:scale-95 bg-dark-blue text-white hover:bg-slate-800;
+}
+
+.admin-btn-accent {
+  @apply px-6 py-2.5 rounded-xl font-bold transition-all transform active:scale-95 bg-accent text-white hover:bg-red-600;
+}
+
+.admin-input {
+  @apply w-full h-12 bg-white rounded-xl px-4 outline-none border border-slate-200 focus:border-accent transition-all;
+}
