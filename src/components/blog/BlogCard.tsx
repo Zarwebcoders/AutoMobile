@@ -3,7 +3,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, ChevronRight } from 'lucide-react';
-import { BlogPost } from './blog-data';
+export interface BlogPost {
+  id?: string;
+  _id?: string;
+  title: string;
+  excerpt: string;
+  content?: string;
+  image: string;
+  date: string;
+  category: string;
+  isVideo?: boolean;
+}
 
 interface BlogCardProps {
   post: BlogPost;
