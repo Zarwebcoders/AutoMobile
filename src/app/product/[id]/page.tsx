@@ -140,7 +140,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               </div>
 
               <div className="flex gap-4 px-2 overflow-x-auto pb-2 scrollbar-none">
-                {galleryImages.map((img, i) => (
+                {galleryImages.map((img: string, i: number) => (
                   <button 
                     key={i} 
                     onClick={() => setSelectedImage(img)}
@@ -312,7 +312,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 </h3>
               </div>
               <div className="p-6 space-y-4">
-                {(product.features || []).map((feature, i) => (
+                {(product.features || []).map((feature: string, i: number) => (
                   <div key={i} className="flex gap-3 text-xs font-bold leading-relaxed">
                     <Check size={14} className="text-[#04BF33] shrink-0 mt-0.5" />
                     <span className="text-dark-blue">{feature}</span>
@@ -339,7 +339,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                      { name: 'RIDEX WIPER MOTOR', price: 31.29, image: 'https://enovathemes.com/mobex/wp-content/uploads/product-125-img-1.webp' },
                      { name: 'RIDEX CONTROL ARM', price: 20.11, image: 'https://enovathemes.com/mobex/wp-content/uploads/product-41-img-1-600x600.webp' },
                      { name: 'HELLA BULB', price: 5.32, image: 'https://enovathemes.com/mobex/wp-content/uploads/product-111-img-1.webp' },
-                   ].map((item, i) => (
+                   ].map((item: any, i: number) => (
                      <React.Fragment key={i}>
                        <div className="flex items-center gap-4 bg-gray-50 pr-6 rounded-2xl border border-gray-100 transition-all hover:bg-white hover:shadow-lg group">
                           <div className="w-20 h-20 p-2 bg-white rounded-xl">
@@ -439,7 +439,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                        { make: 'BMW', model: 'X6 (E71)', year: '2008-2014', engine: '4.4 xDrive 50i', transmission: '6 Speed Auto', trim: '407hp 300kW' },
                        { make: 'Audi', model: 'A6 (C6)', year: '2004-2011', engine: '3.0 TFSI quattro', transmission: '6 Speed Auto', trim: '290hp 213kW' },
                        { make: 'Audi', model: 'Q7 (4LB)', year: '2006-2015', engine: '3.0 TFSI quattro', transmission: '8 Speed Auto', trim: '272hp 200kW' },
-                     ].map((item, i) => (
+                     ].map((item: any, i: number) => (
                       <tr key={i} className="hover:bg-blue-50/30 transition-all group">
                         <td className="px-8 py-6">
                           <span className="text-[12px] font-black text-dark-blue uppercase bg-gray-50 px-3 py-1 rounded-lg group-hover:bg-accent transition-colors">{item.make}</span>
@@ -476,7 +476,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     { name: 'LIQUI MOLY TOP TEC 4200', price: '$56.72', image: 'https://enovathemes.com/mobex/wp-content/uploads/product-124-img-1.webp' },
                     { name: 'CASTROL EDGE 5W-30', price: '$48.90', image: 'https://enovathemes.com/mobex/wp-content/uploads/product-123-img-1.webp' },
                     { name: 'SHELL HELIX ULTRA', price: '$52.15', image: 'https://enovathemes.com/mobex/wp-content/uploads/product-122-img-1.webp' },
-                  ].map((p, i) => (
+                  ].map((p: any, i: number) => (
                     <div key={i} className="p-8 space-y-8 hover:bg-gray-50 transition-all group">
                        <div className="h-40 flex flex-col items-center justify-center text-center gap-4">
                           <img src={p.image} className="h-24 object-contain group-hover:scale-110 transition-transform" alt="" />
@@ -504,7 +504,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
           <section className="space-y-12">
             <h2 className="text-3xl font-black text-dark-blue uppercase tracking-tight">Related products</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {relatedProducts.map((product) => (
+              {relatedProducts.map((product: any) => (
                 <ProductCard key={product._id} {...product} />
               ))}
             </div>
@@ -526,7 +526,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 <div className="space-y-3">
                   <label className="text-sm font-black text-dark-blue uppercase tracking-tight">Your rating *</label>
                   <div className="flex gap-4">
-                    {[1, 2, 3, 4, 5].map((s) => (
+                    {[1, 2, 3, 4, 5].map((s: number) => (
                       <button key={s} className="hover:scale-110 transition-transform">
                         <div className="flex gap-0.5">
                           {[...Array(s)].map((_, i) => <Star key={i} size={14} className="fill-accent text-accent" />)}
