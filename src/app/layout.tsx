@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Oswald, Outfit } from "next/font/google";
 import "./globals.css";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
-import { TopPromoBanner } from "@/components/layout/TopPromoBanner";
+import { FloatingContact } from "@/components/layout/FloatingContact";
+
 import { AuthProvider } from "@/context/AuthContext";
 
 const oswald = Oswald({
@@ -17,7 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "MOBEX | Premium Auto Parts & Accessories",
+  title: "Baladex Global | Premium Auto Parts & Accessories",
   description: "USA's number 1 supplier! With over 250+ branches nationwide and 130,000 parts available.",
   icons: {
     icon: '/logo.png',
@@ -37,9 +38,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <AuthProvider>
-          <TopPromoBanner />
+
           {children}
           <MobileBottomNav />
+          <FloatingContact />
         </AuthProvider>
       </body>
     </html>

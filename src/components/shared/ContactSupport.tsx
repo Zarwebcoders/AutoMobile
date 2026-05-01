@@ -19,7 +19,7 @@ export const ContactSupport = () => {
                   <span className="text-[10px] font-black text-blue-200 uppercase tracking-widest leading-none">Call us now</span>
                   <div className="text-4xl font-black text-white tracking-tighter italic font-oswald flex items-center gap-3">
                     <Phone className="text-accent w-8 h-8" />
-                    +01 123 456 7890
+                    97374 42444
                   </div>
                 </div>
                 <button className="h-16 px-12 bg-white text-dark-blue rounded-2xl font-black uppercase text-sm flex items-center gap-4 hover:bg-accent hover:text-dark-blue transition-all group/btn shadow-xl shadow-black/20 transform group-hover:-translate-y-1">

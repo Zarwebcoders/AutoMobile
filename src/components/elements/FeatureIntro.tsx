@@ -45,11 +45,11 @@ export const FeatureIntro = () => {
           <div className="w-full lg:w-2/5 space-y-8">
             <div className="space-y-4">
               <h4 className="text-4xl font-black font-oswald text-dark-blue leading-tight uppercase tracking-tighter italic">
-                Mobex Auto Parts <br/>
+                Baladex Global Auto Parts <br/>
                 <span className="text-accent underline decoration-4 underline-offset-4 decoration-accent/30 not-italic">Premium Quality</span>
               </h4>
               <div className="space-y-6 text-gray-500 font-medium">
-                <p>With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!</p>
+                <p>With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!</p>
                 <p>We offer service parts at very competitive prices with Free Delivery across the whole of the USA.</p>
               </div>
             </div>

@@ -28,12 +28,12 @@ export const ElementsHero = () => {
           <div className="w-full lg:w-1/2 space-y-6 z-10">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-black font-oswald text-dark-blue leading-[1] flex flex-col uppercase tracking-tighter italic">
-                <span>Mobex Auto Parts</span>
+                <span>Baladex Global Auto Parts</span>
                 <span className="text-accent underline decoration-4 underline-offset-8 decoration-accent/30 not-italic">Premium Quality</span>
               </h1>
               <div className="max-w-md space-y-4">
                 <p className="text-gray-500 font-medium leading-relaxed text-base">
-                  With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!
+                  With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!
                 </p>
                 <p className="text-gray-400 text-xs italic">
                   We offer service parts at very competitive prices with Free Delivery across the whole of the USA.

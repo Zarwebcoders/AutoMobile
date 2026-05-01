@@ -30,8 +30,8 @@ export const MobileBottomNav = () => {
       onClick: () => openMobileSideBar('categories')
     },
     { 
-      label: 'Car filter', 
-      icon: 'https://enovathemes.com/mobex/wp-content/themes/mobex/images/icons/vehicle.svg',
+      label: 'Bike filter', 
+      icon: 'https://enovathemes.com/mobex/wp-content/themes/mobex/images/icons/vehicle.svg', 
       onClick: () => openMobileSideBar('car-filter')
     },
     { 

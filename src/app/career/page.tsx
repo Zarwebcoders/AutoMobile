@@ -8,8 +8,8 @@ import { ContactSupport } from "@/components/shared/ContactSupport";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 
 export const metadata = {
-  title: 'Careers - Join the Mobex Team',
-  description: 'Explore career opportunities at Mobex and join our passionate team of automotive professionals.',
+  title: 'Careers - Join the Baladex Global Team',
+  description: 'Explore career opportunities at Baladex Global and join our passionate team of automotive professionals.',
 };
 
 export default function CareerPage() {

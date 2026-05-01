@@ -4,18 +4,18 @@ export const SchemaOrg = () => {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "MOBEX Auto Parts",
+    "name": "Baladex Global Auto Parts",
     "url": "https://mobex-autoparts.com",
     "logo": "https://mobex-autoparts.com/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-406-555-0120",
+      "telephone": "+91-97374-42444",
       "contactType": "customer service"
     },
     "sameAs": [
-      "https://facebook.com/mobex",
-      "https://twitter.com/mobex",
-      "https://instagram.com/mobex"
+      "https://facebook.com/baladexglobal",
+      "https://twitter.com/baladexglobal",
+      "https://instagram.com/baladexglobal"
     ]
   };
 

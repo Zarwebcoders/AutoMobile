@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search, RotateCcw, Car } from 'lucide-react';
+import { Search, RotateCcw, Bike } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const VerticalVehicleFilter = () => {
@@ -10,7 +10,7 @@ export const VerticalVehicleFilter = () => {
   return (
     <div className="bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden w-full">
       <div className="bg-dark-blue p-6 flex items-center gap-3">
-        <Car className="text-accent w-6 h-6" />
+        <Bike className="text-accent w-6 h-6" />
         <h3 className="text-white font-oswald text-xl uppercase tracking-wide">Vehicle Filter</h3>
       </div>
       

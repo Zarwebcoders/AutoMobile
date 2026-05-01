@@ -11,7 +11,7 @@ import { MoreToLove } from "@/components/home/MoreToLove";
 import { ContentHub } from "@/components/home/ContentHub";
 import { Newsletter } from "@/components/home/Newsletter";
 import { Footer } from "@/components/layout/Footer";
-import { FloatingActions } from "@/components/layout/FloatingActions";
+
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 
 export default function Home() {
@@ -48,7 +48,7 @@ export default function Home() {
       <ContentHub />
       <Newsletter />
       <Footer variant="main" />
-      <FloatingActions />
+
     </main>
   );
 }

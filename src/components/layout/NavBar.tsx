@@ -14,33 +14,27 @@ import {
   ShoppingCart,
   Menu,
   RotateCw,
-  LayoutGrid,
   Search,
-  User,
-  Settings,
   Filter,
-  LogOut,
   FileDown
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { ProductSearch } from './ProductSearch';
 import { MobileSideBar } from './MobileSideBar';
-import { MyGarageDropdown } from './MyGarageDropdown';
+
 import { useUIStore } from '@/store/useUIStore';
 
 const MegaMenu = dynamic(() => import('./MegaMenu').then(mod => mod.MegaMenu), { ssr: false });
 const BrandMegaMenu = dynamic(() => import('./BrandMegaMenu').then(mod => mod.BrandMegaMenu), { ssr: false });
-
-import { useAuth } from '@/context/AuthContext';
 
 export const NavBar = () => {
   const pathname = usePathname();
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isBrandMenuOpen, setIsBrandMenuOpen] = useState(false);
   const { openMobileSideBar } = useUIStore();
-  const [isGarageOpen, setIsGarageOpen] = useState(false);
+
   const [isSticky, setIsSticky] = useState(false);
-  const { user, logout } = useAuth();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,90 +68,33 @@ export const NavBar = () => {
       )}
     >
       {/* Top Bar - High Fidelity Desktop */}
-      <div className="hidden lg:block bg-[#05111b] text-white/90 text-[11px] py-2 border-b border-white/5 w-full">
+      <div className="hidden lg:block bg-[#05111b] text-white/90 text-[12px] py-2 border-b border-white/5 w-full">
         <div className="px-6 flex justify-between items-center">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
               <PhoneCall className="w-3.5 h-3.5 text-accent" />
-              <span className="font-bold">Call us between 8 AM - 10 PM / <strong className="text-white">6668 5555</strong></span>
+              <a href="tel:+919737442444" className="font-bold">Call us between 8 AM - 10 PM / <strong className="text-white">9737442444</strong></a>
             </div>
-            <Link
-              href="#"
+            <a
+              href="https://wa.me/919737442444"
+              target="_blank"
+              rel="noopener noreferrer"
               onMouseEnter={closeAllMenus}
               className="flex items-center gap-2 hover:text-white transition-colors"
             >
               <MessageSquare className="w-3.5 h-3.5 text-accent" />
-              <span className="font-bold underline underline-offset-4 decoration-accent/30">Live Chat / Chat with an Expert</span>
-            </Link>
-            <a
-              href="/Catalogue.pdf"
-              download
-              className="flex items-center gap-2 hover:text-white transition-colors border-l border-white/10 pl-8 ml-2"
-            >
-              <FileDown className="w-3.5 h-3.5 text-accent" />
-              <span className="font-bold">Download Catalogue</span>
+              <span className="font-bold underline underline-offset-4 decoration-accent/50">Live Chat / Chat with an Expert</span>
             </a>
           </div>
 
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-4 border-r border-white/10 pr-6 mr-2">
-              <span
-                onMouseEnter={closeAllMenus}
-                className="cursor-pointer hover:text-white flex items-center gap-1 font-bold italic"
-              >
-                $ USD <ChevronDown size={10} />
-              </span>
-              <span
-                onMouseEnter={closeAllMenus}
-                className="cursor-pointer hover:text-white flex items-center gap-1 font-bold italic"
-              >
-                En <ChevronDown size={10} />
-              </span>
-            </div>
-
-            <div className="relative group">
-              <button
-                onClick={() => setIsGarageOpen(!isGarageOpen)}
-                onMouseEnter={closeAllMenus}
-                className="flex items-center gap-2 bg-white/10 hover:bg-accent hover:text-dark-blue px-4 py-1.5 rounded-lg transition-all font-black uppercase text-[10px] tracking-widest"
-              >
-                <Settings size={14} className={isGarageOpen ? 'animate-spin' : ''} />
-                <span>My Garage</span>
-                <ChevronDown size={12} className={isGarageOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
-              </button>
-              <MyGarageDropdown isOpen={isGarageOpen} onClose={() => setIsGarageOpen(false)} />
-            </div>
-
-            {user ? (
-              <div className="flex items-center gap-4">
-                {(user.role === 'Admin' || user.role === 'Super Admin') && (
-                  <Link
-                    href="/admin"
-                    className="flex items-center gap-2 bg-accent/20 text-accent px-4 py-1.5 rounded-lg font-black uppercase text-[10px] tracking-widest hover:bg-accent hover:text-dark-blue transition-all"
-                  >
-                    <LayoutGrid size={14} />
-                    <span>Admin Panel</span>
-                  </Link>
-                )}
-                <button
-                  onClick={logout}
-                  className="flex items-center gap-2 bg-red-500/10 text-red-500 px-4 py-1.5 rounded-lg font-black uppercase text-[10px] tracking-widest hover:bg-red-500 hover:text-white transition-all"
-                >
-                  <LogOut size={14} />
-                  <span>Logout</span>
-                </button>
-              </div>
-            ) : (
-              <Link
-                href="/login"
-                onMouseEnter={closeAllMenus}
-                className="flex items-center gap-2 bg-accent text-dark-blue px-4 py-1.5 rounded-lg font-black uppercase text-[10px] tracking-widest hover:bg-white transition-colors shadow-lg shadow-accent/20"
-              >
-                <User size={14} />
-                <span>Login</span>
-              </Link>
-            )}
-          </div>
+          <a
+            href="/Catalogue.pdf"
+            download
+            className="flex items-center gap-2 hover:text-white transition-colors"
+          >
+            <FileDown className="w-3.5 h-3.5 text-accent" />
+            <span className="font-bold">Download Catalogue</span>
+          </a>
         </div>
       </div>
 
@@ -173,7 +110,7 @@ export const NavBar = () => {
             onMouseEnter={closeAllMenus}
             className="flex items-center"
           >
-            <img src="/logo.png" alt="MOBEX" className="h-18 w-28 object-contain" />
+            <img src="/logo.png" alt="Baladex Global" className="h-18 w-28 object-contain" />
           </Link>
 
           {/* Navigation & Categories Group */}
@@ -224,26 +161,13 @@ export const NavBar = () => {
           </div>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-6 shrink-0">
-            <div className="flex items-center gap-5 border-r border-white/10 pr-6">
-              <Search className="w-5 h-5 text-white/50 hover:text-accent cursor-pointer transition-colors" />
-              <RotateCw className="w-5 h-5 text-white/50 hover:text-accent cursor-pointer transition-colors" />
-              <div className="relative group cursor-pointer">
-                <Heart className="w-5 h-5 text-white/50 hover:text-accent transition-colors" />
-                <span className="absolute -top-2 -right-2 bg-accent text-dark-blue w-4 h-4 rounded-full text-[9px] font-black flex items-center justify-center">0</span>
-              </div>
+          <div className="flex items-center gap-5 shrink-0">
+            <Search className="w-5 h-5 text-white/50 hover:text-accent cursor-pointer transition-colors" />
+            <RotateCw className="w-5 h-5 text-white/50 hover:text-accent cursor-pointer transition-colors" />
+            <div className="relative group cursor-pointer">
+              <Heart className="w-5 h-5 text-white/50 hover:text-accent transition-colors" />
+              <span className="absolute -top-2 -right-2 bg-accent text-dark-blue w-4 h-4 rounded-full text-[9px] font-black flex items-center justify-center">0</span>
             </div>
-
-            <Link href="/cart" className="flex items-center gap-3 relative group text-white">
-              <div className="relative">
-                <ShoppingCart className="w-5 h-5 text-white group-hover:text-accent transition-colors" />
-                <span className="absolute -top-2 -right-2 bg-accent text-dark-blue rounded-full w-4 h-4 text-[9px] flex items-center justify-center font-black shadow-md">0</span>
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-[9px] font-black uppercase tracking-wider opacity-60">My Cart</span>
-                <span className="text-[13px] font-black text-accent">$0.00</span>
-              </div>
-            </Link>
           </div>
         </div>
       </div>
@@ -253,7 +177,7 @@ export const NavBar = () => {
         {/* Top Row: Logo, Cart, Menu */}
         <div className="flex items-center justify-between px-4 pt-5 pb-3">
           <Link href="/" className="flex items-center">
-            <img src="/logo.png" alt="MOBEX" className="h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="Baladex Global" className="h-12 w-auto object-contain" />
           </Link>
           <div className="flex items-center gap-5">
             <div className="relative">

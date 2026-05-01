@@ -28,7 +28,7 @@ export default function AboutPage() {
   const values = [
     {
       title: "Quality First",
-      desc: "We only source parts from certified manufacturers to ensure your vehicle's longevity.",
+      desc: "We only source genuine parts from certified manufacturers to ensure your ride's performance and safety.",
       icon: ShieldCheck,
       color: "text-red-500"
     },
@@ -40,7 +40,7 @@ export default function AboutPage() {
     },
     {
       title: "Expert Support",
-      desc: "Our team of automotive experts is available 24/7 to help you find the right part.",
+      desc: "Our team of 2-wheeler experts is available 24/7 to help you find the perfect match for your bike.",
       icon: Users,
       color: "text-orange-500"
     }
@@ -54,9 +54,9 @@ export default function AboutPage() {
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden bg-dark-blue">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1486262715619-67b85eb19ea3?q=80&w=1600" 
-            alt="About Hero" 
-            className="w-full h-full object-cover opacity-30"
+            src="/images/about-hero.png" 
+            alt="About Baladex Global" 
+            className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark-blue/80 via-dark-blue/50 to-white" />
         </div>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-accent font-black uppercase tracking-[0.4em] text-xs md:text-sm mb-6 block"
           >
-            Driving Excellence Since 2009
+            Riding Excellence Since 2009
           </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function AboutPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-8xl font-black text-white italic tracking-tighter uppercase font-oswald leading-none mb-8"
           >
-            WE ARE <span className="text-accent">MOBEX</span>
+            WE ARE <span className="text-accent">BALADEX GLOBAL</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="text-white/80 max-w-2xl mx-auto text-lg md:text-xl font-medium leading-relaxed"
           >
-            The UK&apos;s leading independent supplier of high-quality automotive parts and accessories, dedicated to keeping you on the road.
+            The UK's leading independent supplier of premium motorcycle parts and accessories, dedicated to keeping you on two wheels.
           </motion.p>
         </div>
       </section>
@@ -129,8 +129,8 @@ export default function AboutPage() {
                 </h2>
               </div>
               <div className="prose max-w-none text-gray-500 space-y-6 font-medium leading-relaxed">
-                <p>Founded in 2009, Mobex started with a simple mission: to provide mechanics and car enthusiasts with the highest quality parts at fair prices. What began as a small local warehouse has grown into a nationwide network of distribution centers.</p>
-                <p>We understand that a car is more than just a machine; it&apos;s your daily companion, your work tool, and your family&apos;s safety. That&apos;s why we never compromise on the quality of our stock.</p>
+                <p>Founded in 2009, Baladex Global started with a simple mission: to provide bikers and 2-wheeler enthusiasts with the highest quality parts at fair prices. What began as a small local workshop has grown into a nationwide network of distribution centers specializing in performance and reliability.</p>
+                <p>We understand that a motorcycle is more than just a machine; it's an extension of your freedom, your passion, and your lifestyle. That's why we never compromise on the quality of our stock, from high-performance engines to essential safety gear.</p>
               </div>
               <div className="grid grid-cols-2 gap-8">
                 <div className="flex flex-col gap-3">
@@ -138,14 +138,14 @@ export default function AboutPage() {
                     <Target className="text-accent" />
                     <span className="font-black uppercase text-sm italic font-oswald">Our Mission</span>
                   </div>
-                  <p className="text-xs text-gray-400 font-bold leading-relaxed">To be the most trusted source for automotive excellence in the UK.</p>
+                  <p className="text-xs text-gray-400 font-bold leading-relaxed">To be the most trusted source for 2-wheeler performance and parts in the UK.</p>
                 </div>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3 text-dark-blue">
                     <Eye className="text-accent" />
                     <span className="font-black uppercase text-sm italic font-oswald">Our Vision</span>
                   </div>
-                  <p className="text-xs text-gray-400 font-bold leading-relaxed">Pioneering the future of auto-parts distribution with technology.</p>
+                  <p className="text-xs text-gray-400 font-bold leading-relaxed">Pioneering the future of motorcycle parts distribution with precision technology.</p>
                 </div>
               </div>
             </motion.div>
@@ -158,8 +158,8 @@ export default function AboutPage() {
             >
               <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1000" 
-                  alt="Our Team" 
+                  src="/images/about-bike.png" 
+                  alt="Premium Performance Motorcycle" 
                   className="w-full h-auto"
                 />
               </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
             <h2 className="text-3xl md:text-5xl font-black text-dark-blue uppercase font-oswald italic tracking-tight">Our Core Values</h2>
-            <p className="text-gray-500 font-medium">The principles that guide every decision we make at Mobex.</p>
+            <p className="text-gray-500 font-medium">The principles that guide every decision we make at Baladex Global.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -204,7 +204,7 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="bg-dark-blue rounded-[3rem] md:rounded-[5rem] p-12 md:p-24 text-center space-y-8 relative overflow-hidden">
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1600')] bg-cover bg-center opacity-10" />
+             <div className="absolute inset-0 bg-[url('/images/about-cta.png')] bg-cover bg-center opacity-30" />
              <div className="relative z-10 space-y-4">
                 <h2 className="text-4xl md:text-7xl font-black text-white uppercase italic tracking-tighter font-oswald leading-none">
                   Ready to upgrade <br /> your <span className="text-accent">Experience?</span>

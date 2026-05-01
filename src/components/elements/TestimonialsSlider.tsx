@@ -23,13 +23,13 @@ export const TestimonialsSlider = () => {
     {
       name: 'Alex Smith',
       rating: 5,
-      text: 'Mobex delivered on their promise of quality and affordability. I got an air filter for my SUV, and it fit perfectly.',
+      text: 'Baladex Global delivered on their promise of quality and affordability. I got an air filter for my SUV, and it fit perfectly.',
       img: 'https://enovathemes.com/mobex/wp-content/uploads/team3.webp'
     },
     {
       name: 'Taylor Laurent',
       rating: 5,
-      text: 'The diverse inventory and personalized support simplified the process. Mobex is a lifesaver for me.',
+      text: 'The diverse inventory and personalized support simplified the process. Baladex Global is a lifesaver for me.',
       img: 'https://enovathemes.com/mobex/wp-content/uploads/team4.webp'
     }
   ];

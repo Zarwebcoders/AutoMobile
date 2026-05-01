@@ -14,9 +14,9 @@ export const ContentHub = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-4 space-y-6 lg:space-y-8 text-center lg:text-left">
-              <h2 className="text-3xl lg:text-4xl font-black leading-tight">Car repairs have <br /> never been so easy</h2>
+              <h2 className="text-3xl lg:text-4xl font-black leading-tight">Bike repairs have <br /> never been so easy</h2>
               <p className="text-white/60 text-sm font-medium leading-relaxed max-w-xs mx-auto lg:mx-0">
-                Say no to complicated instructions and confusing diagrams. Use the practical and easy car repair tutorials.
+                Say no to complicated instructions and confusing diagrams. Use the practical and easy motorcycle repair tutorials.
               </p>
               <Button size="lg" className="bg-white text-dark-blue hover:bg-gray-100 font-black uppercase text-xs h-14 px-10 rounded-xl shadow-xl">
                 Read more <ArrowRight className="ml-2 w-4 h-4" />
@@ -29,7 +29,7 @@ export const ContentHub = () => {
                   {[
                     { title: 'Fuel temperature sensor: function and failure symptoms', img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=400' },
                     { title: 'Radial vs Cross Ply Tyres: What\'s The Difference?', img: 'https://images.unsplash.com/photo-1486006396193-471a2abc9302?q=80&w=400' },
-                    { title: 'How to change parking brake cable on MERCEDES W201', img: 'https://images.unsplash.com/photo-1486262715619-67b85eb19ea3?q=80&w=400' }
+                    { title: 'How to change brake pads on HONDA CBR600', img: 'https://images.unsplash.com/photo-1486262715619-67b85eb19ea3?q=80&w=400' }
                   ].map((item, i) => (
                     <div key={i} className="min-w-[280px] md:min-w-[340px] flex-1 group cursor-pointer space-y-4 snap-center shrink-0">
                       <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
@@ -54,7 +54,7 @@ export const ContentHub = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
             <div className="space-y-1">
-              <h3 className="text-3xl font-black text-dark-blue">Stay Informed @Mobex World</h3>
+              <h3 className="text-3xl font-black text-dark-blue">Stay Informed @Baladex Global World</h3>
               <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest">Latest offers, promos, product releases and industry news</p>
             </div>
             <div className="hidden md:flex items-center gap-2">
@@ -82,16 +82,16 @@ export const ContentHub = () => {
                 </Button>
               </div>
               <p className="text-[10px] text-dark-blue/60 font-bold mt-10 leading-tight">
-                By signing up you agree to receive emails from MOBEX®
+                By signing up you agree to receive emails from Baladex Global
               </p>
             </div>
 
             {/* News Cards */}
             {[
-              { date: '02 OCT', cat: 'News', title: 'The number of new cars sold over 20 years', img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400' },
+              { date: '02 OCT', cat: 'News', title: 'The rise of premium sport bikes in 2026', img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400' },
               { date: '02 OCT', cat: 'Usefull', title: 'Warning lights indicating activation of various systems', img: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=400' },
               { date: '02 OCT', cat: 'Premium', title: 'What to know about changing the engine oil and oil filters', img: 'https://images.unsplash.com/photo-1605341258814-22b069695028?q=80&w=400' },
-              { date: '02 OCT', cat: 'News', title: 'Auto maintenance tips for long distance travel', img: 'https://images.unsplash.com/photo-1487754180451-c456f719c141?q=80&w=400' }
+              { date: '02 OCT', cat: 'News', title: 'Motorcycle maintenance tips for long distance travel', img: 'https://images.unsplash.com/photo-1487754180451-c456f719c141?q=80&w=400' }
             ].map((news, i) => (
               <Link key={i} href="/blog" className="w-full flex">
                 <motion.div whileHover={{ y: -10 }} className="flex flex-col group cursor-pointer shadow-sm rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-gray-100 h-full bg-white w-full">

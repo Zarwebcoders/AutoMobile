@@ -25,7 +25,7 @@ export const FixedBanner = () => {
               With Gradient Overlay
             </h2>
             <p className="text-gray-500 font-medium text-lg">
-              With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!
+              With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!
             </p>
             <p className="text-gray-400 text-sm italic">
               We offer service parts at very competitive prices with Free Delivery across the whole of the USA.
@@ -61,7 +61,7 @@ export const VideoBanner = () => {
               With Gradient Overlay
             </h2>
             <div className="space-y-6 text-white/70 font-medium text-lg">
-              <p>With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!</p>
+              <p>With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!</p>
               <p>We offer service parts at very competitive prices with Free Delivery across the whole of the USA.</p>
             </div>
           </div>

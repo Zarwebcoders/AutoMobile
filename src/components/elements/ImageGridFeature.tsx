@@ -35,11 +35,11 @@ export const ImageGridFeature = () => {
           <div className="w-full lg:w-1/2 space-y-8">
             <div className="space-y-4">
               <h4 className="text-6xl font-black font-oswald text-dark-blue leading-[0.9] uppercase tracking-tighter italic">
-                Mobex Auto Parts<br/>
+                Baladex Global Auto Parts<br/>
                 <span className="text-accent underline decoration-8 underline-offset-8 decoration-accent/30 not-italic">Premium Quality</span>
               </h4>
               <div className="space-y-6 text-gray-500 font-medium text-lg leading-relaxed">
-                <p>With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!</p>
+                <p>With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!</p>
                 <p>We offer service parts at very competitive prices with Free Delivery across the whole of the USA.</p>
               </div>
             </div>

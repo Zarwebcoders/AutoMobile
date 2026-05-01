@@ -186,7 +186,7 @@ export default function ElementsPage() {
           <h1 className="text-6xl font-black font-oswald italic uppercase tracking-tighter">
             UI Elements & <span className="text-accent">Animations</span>
           </h1>
-          <p className="text-white/60 mt-3 max-w-2xl text-base">A comprehensive showcase of the MOBEX design system — premium components built for high-performance e-commerce.</p>
+          <p className="text-white/60 mt-3 max-w-2xl text-base">A comprehensive showcase of the Baladex Global design system — premium components built for high-performance e-commerce.</p>
         </div>
       </div>
 

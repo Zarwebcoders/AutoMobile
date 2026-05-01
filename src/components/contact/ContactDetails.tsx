@@ -57,7 +57,7 @@ export const ContactDetails = () => {
                   </div>
                   <div className="space-y-1">
                      <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none">Call us now</span>
-                     <div className="text-xl font-black text-dark-blue italic font-oswald">+01 123 456 7890</div>
+                     <div className="text-xl font-black text-dark-blue italic font-oswald">97374 42444</div>
                      <p className="text-xs text-gray-400 font-bold uppercase">Monday - Friday: 8am - 10pm</p>
                   </div>
                </div>
@@ -79,7 +79,7 @@ export const ContactDetails = () => {
                   </div>
                   <div className="space-y-1">
                      <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none">Email address</span>
-                     <div className="text-xl font-black text-dark-blue italic font-oswald group-hover:text-accent transition-colors">support@mobex.com</div>
+                     <div className="text-xl font-black text-dark-blue italic font-oswald group-hover:text-accent transition-colors">info@baladexglobal.com</div>
                      <p className="text-xs text-gray-400 font-bold uppercase">Official technical support</p>
                   </div>
                </div>
@@ -129,7 +129,7 @@ export const ContactDetails = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full h-14 bg-white rounded-2xl px-6 outline-none border border-transparent focus:border-accent transition-all text-dark-blue font-medium" 
-                        placeholder="+01 123 456 7890" 
+                        placeholder="97374 42444" 
                        />
                     </div>
                     <div className="space-y-2">

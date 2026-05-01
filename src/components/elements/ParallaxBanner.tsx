@@ -28,7 +28,7 @@ export const ParallaxBanner = () => {
               With Gradient Overlay
             </h2>
             <div className="space-y-6 text-gray-600 font-medium">
-              <p>With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!</p>
+              <p>With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!</p>
               <p>We offer service parts at very competitive prices with Free Delivery across the whole of the USA.</p>
             </div>
           </div>

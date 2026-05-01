@@ -22,10 +22,10 @@ export const Hero = () => {
           className="text-center mb-12"
         >
           <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight">
-            Select your car
+            Select your Product
           </h1>
           <p className="text-xl md:text-2xl text-white/90 font-medium">
-            Over 300.000 auto parts and accessories
+            Over 10000 auto parts and accessories
           </p>
         </motion.div>
 

@@ -9,24 +9,24 @@ import { cn } from '@/lib/utils';
 const slides = [
   {
     id: 1,
-    title: "Wiper Blades",
-    subtitle: "KEEP YOUR VISION CLEAR",
-    description: "Plus Price Lock on 100s of lines",
-    image: "https://enovathemes.com/mobex/wp-content/uploads/slide-2.webp",
+    title: "Premium Helmets",
+    subtitle: "RIDE WITH CONFIDENCE",
+    description: "Safety meets style with our latest range of carbon fiber helmets.",
+    image: "/images/slider-helmet.png",
     assets: [
       "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-4.webp",
       "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-5.webp",
       "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-6.webp"
     ],
     buttonText: "Shop now",
-    buttonLink: "/shop?category=wipers"
+    buttonLink: "/shop?category=helmets"
   },
   {
     id: 2,
-    title: "Mobil 1",
-    subtitle: "FULL SYNTHETIC",
-    description: "It's more than just oil.\nIt's liquid engineering.",
-    image: "https://enovathemes.com/mobex/wp-content/uploads/slide-4.webp",
+    title: "Engine Mastery",
+    subtitle: "MAXIMUM PERFORMANCE",
+    description: "Premium motorcycle oils engineered for high RPM and extreme heat.",
+    image: "/images/slider-oil.png",
     assets: [
       "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-1.webp",
       "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-2.webp",
@@ -37,16 +37,16 @@ const slides = [
   },
   {
     id: 3,
-    title: "JUMP STARTERS",
-    subtitle: "START BATTERIES IN SECONDS",
-    description: "Up to 45% Off",
-    image: "https://enovathemes.com/mobex/wp-content/uploads/slide-5.webp",
+    title: "Sport Tires",
+    subtitle: "UNMATCHED GRIP",
+    description: "Dominate the asphalt with our selection of performance tires and gold chains.",
+    image: "/images/slider-tires.png",
     assets: [
       "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-7.webp",
       "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-8.webp"
     ],
     buttonText: "Shop now",
-    buttonLink: "/shop?category=tools"
+    buttonLink: "/shop?category=tires"
   }
 ];
 

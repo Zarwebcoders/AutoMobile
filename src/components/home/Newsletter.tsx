@@ -37,7 +37,7 @@ export const Newsletter = () => {
         </form>
 
         <p className="mt-6 text-[10px] md:text-[11px] font-bold text-black opacity-80 uppercase tracking-wider">
-          By signing up you agree to receive emails from MOBEX®
+          By signing up you agree to receive emails from Baladex Global
         </p>
       </motion.div>
     </section>

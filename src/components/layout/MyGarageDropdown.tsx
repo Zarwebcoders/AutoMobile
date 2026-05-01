@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, RotateCcw, Car, X, Plus } from 'lucide-react';
+import { Search, RotateCcw, Bike, X, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 interface MyGarageDropdownProps {
@@ -80,7 +80,7 @@ export const MyGarageDropdown = ({ isOpen, onClose }: MyGarageDropdownProps) => 
           >
             <div className="bg-dark-blue p-6 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Car className="text-accent w-6 h-6" />
+                <Bike className="text-accent w-6 h-6" />
                 <h3 className="text-white font-oswald text-xl uppercase tracking-wide italic leading-none">My Garage</h3>
               </div>
               <button onClick={handleReset} className="text-[10px] font-black text-accent uppercase tracking-widest hover:text-white transition-colors">Reset</button>

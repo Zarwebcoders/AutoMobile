@@ -36,7 +36,7 @@ export const NewsletterCTA = () => {
               Subscribe <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
             </Button>
             <p className="text-[10px] md:text-xs text-dark-blue/60 font-bold text-center lg:text-left mt-6 leading-tight uppercase tracking-widest">
-              By signing up you agree to receive emails from MOBEX®
+              By signing up you agree to receive emails from Baladex Global
             </p>
           </div>
         </div>

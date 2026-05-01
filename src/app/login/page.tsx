@@ -47,7 +47,7 @@ export default function LoginPage() {
             </Link>
             <div className="flex flex-col gap-4">
               <Link href="/">
-                <img src="/logo.png" alt="MOBEX" className="h-12 w-auto object-contain" />
+                <img src="/logo.png" alt="Baladex Global" className="h-12 w-auto object-contain" />
               </Link>
               <div className="flex flex-col gap-2">
                 <span className="text-[10px] font-black text-accent uppercase tracking-widest leading-none">Authentication</span>
@@ -74,7 +74,7 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="w-full h-14 bg-slate-50 rounded-2xl pl-14 pr-6 outline-none border border-transparent focus:border-accent transition-all text-dark-blue font-medium" 
-                  placeholder="admin@mobex.com" 
+                  placeholder="admin@baladexglobal.com" 
                 />
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function LoginPage() {
           </form>
 
           <p className="text-center text-[11px] font-bold text-slate-400 uppercase tracking-tight">
-            Protected by Mobex Secure Access <br /> Authorized personnel only
+            Protected by Baladex Global Secure Access <br /> Authorized personnel only
           </p>
         </div>
 

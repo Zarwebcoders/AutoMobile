@@ -37,11 +37,11 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
           {variant === 'main' ? (
             <div className="lg:col-span-4 space-y-8">
               <Link href="/" className="inline-flex items-center">
-                <img src="/logo.png" alt="MOBEX" className="h-16 w-auto object-contain" />
+                <img src="/logo.png" alt="Baladex Global" className="h-16 w-auto object-contain" />
               </Link>
               <div className="space-y-6">
                 <p className="text-xl font-black text-white leading-tight max-w-[320px]">
-                  With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!
+                  With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!
                 </p>
                 <p className="text-sm font-medium text-gray-500 leading-relaxed max-w-[340px]">
                   We offer service parts at very competitive prices with Free Delivery across the whole of the USA.
@@ -58,7 +58,7 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
             /* Variant Product: Logo, Social & Newsletter */
             <div className="lg:col-span-3 space-y-8">
               <Link href="/" className="inline-flex items-center">
-                <img src="/logo.png" alt="MOBEX" className="h-12 w-auto object-contain" />
+                <img src="/logo.png" alt="Baladex Global" className="h-12 w-auto object-contain" />
               </Link>
 
               <div className="flex gap-4">
@@ -141,9 +141,6 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
           {/* Contact Section */}
           <div className={cn("space-y-8", variant === 'main' ? "lg:col-span-4" : "lg:col-span-4")}>
              <div className="space-y-8">
-                <div className="flex items-center opacity-20 grayscale select-none">
-                  <img src="/logo.png" alt="MOBEX" className="h-20 w-auto object-contain" />
-                </div>
 
                 <div className="space-y-8">
                   <div className="flex gap-4 group">
@@ -163,19 +160,24 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
                     </div>
                     <div className="text-[14px] leading-snug font-medium text-gray-400">
                       <span className="block text-gray-200 font-bold mb-1">Call us between 8 AM - 10 PM</span>
-                      <span className="block font-black text-2xl text-accent tracking-tighter">6668 5555 8464</span>
+                      <a href="tel:+919737442444" className="block font-black text-2xl text-accent tracking-tighter hover:text-white transition-colors">97374 42444</a>
                     </div>
                   </div>
 
-                  <div className="flex gap-4 group">
+                  <a 
+                    href="https://wa.me/919737442444" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex gap-4 group cursor-pointer"
+                  >
                     <div className="w-12 h-12 shrink-0 bg-[#1A1A1A] rounded-2xl flex items-center justify-center">
                       <MessageSquare size={24} className="text-accent group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
-                      <h6 className="text-[16px] font-black text-white">Live chat</h6>
+                      <h6 className="text-[16px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
                       <p className="text-[13px] font-bold text-gray-500">Chat with an Expert</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
              </div>
           </div>
@@ -186,7 +188,7 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
           {/* Top Intro */}
           <div className="text-center space-y-4">
              <h4 className="text-[15px] font-black leading-tight px-4">
-               With over 250+ branches nationwide and 130,000 parts available Mobex Auto Parts is the USA&apos;s number 1 supplier!
+               With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!
              </h4>
              <p className="text-[13px] font-medium text-gray-500 leading-relaxed px-4">
                We offer service parts at very competitive prices with Free Delivery across the whole of the USA.
@@ -219,9 +221,7 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
           {/* Brand Info Block */}
           <div className="flex flex-col items-center space-y-8 px-4">
-            <Link href="/" className="inline-flex items-center">
-              <img src="/logo.png" alt="MOBEX" className="h-16 w-auto object-contain" />
-            </Link>
+
 
             <div className="space-y-10 w-full max-w-xs mx-auto">
                <div className="flex items-start gap-4 justify-center text-center flex-col items-center">
@@ -240,49 +240,43 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
                   </div>
                   <div className="space-y-1">
                     <p className="text-[13px] font-bold text-gray-400">Call us between 8 AM - 10 PM</p>
-                    <p className="text-2xl font-black text-accent tracking-tighter leading-none">6668 5555 8464</p>
+                    <a href="tel:+919737442444" className="text-2xl font-black text-accent tracking-tighter leading-none block">97374 42444</a>
                   </div>
                </div>
 
-               <div className="flex items-start gap-4 justify-center text-center flex-col items-center">
+                <a 
+                  href="https://wa.me/919737442444"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 justify-center text-center flex-col items-center group cursor-pointer"
+                >
                   <div className="w-12 h-12 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
-                    <MessageSquare size={24} className="text-accent" />
+                    <MessageSquare size={24} className="text-accent group-hover:scale-110 transition-transform" />
                   </div>
                   <div className="space-y-0.5">
-                    <h6 className="text-[16px] font-black text-white">Live chat</h6>
+                    <h6 className="text-[16px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
                     <p className="text-[13px] font-bold text-gray-500">Chat with an Expert</p>
                   </div>
-               </div>
+                </a>
             </div>
           </div>
 
           <div className="h-px bg-gray-800/50 mx-4" />
 
-          {/* Payment and Social Row */}
-          <div className="flex flex-col items-center gap-8 py-4">
-             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 grayscale opacity-80 px-4">
-                <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/apple-pay.svg" className="h-4" alt="applepay" />
-                <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/google-pay.svg" className="h-4" alt="gpay" />
-                <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/mastercard.svg" className="h-4" alt="mastercard" />
-                <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/paypal.svg" className="h-4" alt="paypal" />
-                <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/paypal-credit.svg" className="h-4" alt="paypalcredit" />
-                <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/visa.svg" className="h-4" alt="visa" />
-                <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/american-express.svg" className="h-4" alt="amex" />
-             </div>
 
-             <div className="flex gap-8">
+
+
+          {/* Mobile Copyright and Stacked Links */}
+          <div className="bg-[#0A0A0A] -mx-4 py-8 px-4 text-center space-y-6">
+             <div className="flex justify-center gap-6 mb-2">
                 {[Facebook, Instagram, Linkedin, Twitter, Youtube].map((Icon, idx) => (
                   <Link key={idx} href="#" className="w-5 h-5 text-gray-500 hover:text-white transition-colors">
                     <Icon className="w-full h-full" />
                   </Link>
                 ))}
              </div>
-          </div>
-
-          {/* Mobile Copyright and Stacked Links */}
-          <div className="bg-[#0A0A0A] -mx-4 py-8 px-4 text-center space-y-3">
              <p className="text-[13px] font-bold text-gray-500 mb-6">
-               Copyright © 2026 <span className="text-white">Mobex</span>. All Rights Reserved
+               Copyright © 2026 <span className="text-white">Baladex Global</span>. All Rights Reserved
              </p>
              <div className="flex flex-col gap-4">
                {['Terms of Use', 'Privacy Policy', 'Interest-Based Ads', 'Accessibility'].map(item => (
@@ -294,110 +288,34 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
         {/* Desktop Only Bottom Sections */}
         <div className="hidden md:block">
-          {variant === 'main' && (
-            <div className="border-t border-gray-800 py-20">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-9 gap-x-8 gap-y-12">
-                {[
-                  {
-                    title: 'Air conditioning',
-                    links: ['Condenser', 'Ac compressor', 'Heat exchanger', 'Receiver drier', 'Heater control valve']
-                  },
-                  {
-                    title: 'Damping',
-                    links: ['Coil spring', 'Leaf spring', 'Shock absorber', 'Springs', 'Hydraulic oil']
-                  },
-                  {
-                    title: 'Brakes',
-                    links: ['Brake discs', 'Brake pad wear sensor', 'Brake pads', 'Drum brake', 'Brake drum']
-                  },
-                  {
-                    title: 'Body',
-                    links: ['Bumper', 'Doors', 'Fuel tank', 'Wing mirror', 'Fender']
-                  },
-                  {
-                    title: 'Interior',
-                    links: ['Boot struts', 'Car mats', 'Gear shift knobs', 'Window crank', 'Cylinder lock']
-                  },
-                  {
-                    title: 'Electrics',
-                    links: ['Alternator', 'Battery', 'Relay starter', 'Starter', 'Headlight bulb']
-                  },
-                  {
-                    title: 'Engine',
-                    links: ['Engine electrics', 'Knock sensor', 'Lambda sensor', 'Oil cooler', 'Drive chain']
-                  },
-                  {
-                    title: 'Steering',
-                    links: ['Headlights', 'Lighting controls', 'Rear lights', 'Turn signal light', 'Indicator bulb']
-                  },
-                  {
-                    title: 'Popular Brands',
-                    links: ['VICMA', 'CASTROL', 'RAVENOL', 'ALANKO', 'TRICSAN', 'ABAKUS', 'BLIC', 'BOSCH', 'DAYCO', 'LEOPLAST', 'STARK', 'DT', 'RIDEX', 'PETEK']
-                  }
-                ].map((cat) => (
-                  <div key={cat.title} className="space-y-6">
-                    <h4 className="text-[15px] font-black uppercase tracking-tight text-white underline decoration-accent/30 decoration-2 underline-offset-8">{cat.title}</h4>
-                    <ul className="space-y-2.5">
-                      {cat.links.map((link) => (
-                        <li key={link}>
-                          <Link href={`/shop?query=${encodeURIComponent(link)}`} className="text-[13px] font-bold text-gray-500 hover:text-white transition-all hover:translate-x-1 inline-block">{link}</Link>
-                        </li>
-                      ))}
-                      <li className="pt-2">
-                        <Link href="/shop" className="text-[11px] font-black uppercase tracking-tight text-accent hover:text-white transition-colors">View all &gt;</Link>
-                      </li>
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
-          <div className="border-t border-gray-800 py-8 flex flex-wrap justify-between items-center gap-6">
-             <div className="flex items-center gap-8">
-                <div className="flex items-center gap-4 text-[13px] font-bold text-gray-500">
-                   <span className="text-white">Languages</span>
-                   <div className="flex gap-4 grayscale opacity-50">
-                      <button className="hover:text-white flex items-center gap-1"><img src="https://flagcdn.com/us.svg" className="w-4 h-3 object-cover rounded-px" alt="en" /> English</button>
-                      <button className="hover:text-white flex items-center gap-1"><img src="https://flagcdn.com/de.svg" className="w-4 h-3 object-cover rounded-px" alt="de" /> Deutsch</button>
-                      <button className="hover:text-white flex items-center gap-1"><img src="https://flagcdn.com/fr.svg" className="w-4 h-3 object-cover rounded-px" alt="fr" /> Français</button>
-                   </div>
-                </div>
-             </div>
 
-             <div className="flex items-center gap-10">
-                <div className="flex items-center gap-6">
-                   <span className="text-[13px] font-bold text-gray-500">Payment options</span>
-                   <div className="flex items-center gap-4 grayscale opacity-60">
-                      <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/visa.svg" className="h-4" alt="visa" />
-                      <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/mastercard.svg" className="h-4" alt="mastercard" />
-                      <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/paypal.svg" className="h-4" alt="paypal" />
-                      <img src="https://enovathemes.com/mobex/wp-content/plugins/enovathemes-addons/assets/img/payment/american-express.svg" className="h-4" alt="amex" />
-                   </div>
-                </div>
 
-                {variant === 'main' && (
-                  <div className="flex gap-4 border-l border-gray-800 pl-10">
-                    {[
-                      { name: 'Facebook',  Icon: Facebook  },
-                      { name: 'Instagram', Icon: Instagram },
-                      { name: 'Linkedin',  Icon: Linkedin  },
-                      { name: 'Twitter',   Icon: Twitter   },
-                      { name: 'Youtube',   Icon: Youtube   },
-                    ].map(({ name, Icon }) => (
-                      <Link key={name} href="#" className="w-4 h-4 text-gray-500 hover:text-white transition-colors" title={name}>
-                        <Icon className="w-full h-full" />
-                      </Link>
-                    ))}
-                  </div>
-                )}
-             </div>
-          </div>
+
 
           <div className="border-t border-gray-800 pt-8 flex flex-wrap justify-between items-center gap-4">
-             <p className="text-[13px] font-bold text-gray-500">
-               Copyright © 2026 <span className="text-white">Mobex</span>. All Rights Reserved
-             </p>
+             <div className="flex items-center gap-8">
+               <p className="text-[13px] font-bold text-gray-500">
+                 Copyright © 2026 <span className="text-white">Baladex Global</span>. All Rights Reserved
+               </p>
+               
+               {variant === 'main' && (
+                 <div className="flex gap-4 border-l border-gray-800 pl-8">
+                   {[
+                     { name: 'Facebook',  Icon: Facebook  },
+                     { name: 'Instagram', Icon: Instagram },
+                     { name: 'Linkedin',  Icon: Linkedin  },
+                     { name: 'Twitter',   Icon: Twitter   },
+                     { name: 'Youtube',   Icon: Youtube   },
+                   ].map(({ name, Icon }) => (
+                     <Link key={name} href="#" className="w-4 h-4 text-gray-500 hover:text-white transition-colors" title={name}>
+                       <Icon className="w-full h-full" />
+                     </Link>
+                   ))}
+                 </div>
+               )}
+             </div>
+
              <div className="flex gap-6">
                 {['Terms of Use', 'Privacy Policy', 'Interest-Based Ads', 'Accessibility'].map((item) => (
                   <Link key={item} href="#" className="text-[13px] font-bold text-gray-500 hover:text-white transition-colors">{item}</Link>
@@ -408,13 +326,7 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
       </div>
 
-      {/* Scroll to Top */}
-      <button 
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-accent text-dark-blue rounded-xl flex items-center justify-center shadow-2xl hover:bg-white transition-all transform hover:-translate-y-2 z-50"
-      >
-        <ChevronUp size={24} />
-      </button>
+
     </footer>
   );
 };

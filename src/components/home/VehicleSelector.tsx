@@ -49,7 +49,7 @@ export const VehicleSelector = () => {
                 onChange={(e) => setMake(e.target.value)}
                 className="w-full h-14 pl-5 pr-10 rounded-xl bg-white border-none appearance-none cursor-pointer focus:ring-2 focus:ring-dark-blue transition-all text-[13px] font-bold text-gray-700"
               >
-                <option value="">Make</option>
+                <option value="">Brand</option>
                 {MAKES.map(m => <option key={m} value={m}>{m}</option>)}
               </select>
               <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-hover:text-dark-blue transition-colors" />

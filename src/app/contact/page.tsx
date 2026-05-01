@@ -25,22 +25,22 @@ export default function ContactPage() {
   const contactInfo = [
     {
       title: "Call Us",
-      value: "6668 5555",
+      value: "97374 42444",
       desc: "Available 8 AM - 10 PM",
       icon: Phone,
       color: "bg-red-50 text-red-500"
     },
     {
       title: "Email Us",
-      value: "support@mobex.com",
+      value: "info@baladexglobal.com",
       desc: "24/7 Online Support",
       icon: Mail,
       color: "bg-blue-50 text-blue-500"
     },
     {
       title: "Visit Us",
-      value: "123 Auto Street",
-      desc: "London, UK",
+      value: "Main Street, London",
+      desc: "United Kingdom",
       icon: MapPin,
       color: "bg-green-50 text-green-500"
     }
@@ -52,7 +52,7 @@ export default function ContactPage() {
       
       {/* Hero Section */}
       <section className="bg-dark-blue pt-32 pb-20 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1600')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/images/contact-hero.png')] bg-cover bg-center opacity-30" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -208,7 +208,7 @@ export default function ContactPage() {
               <div className="bg-accent/5 p-10 rounded-[3rem] border border-accent/10 space-y-4">
                 <h4 className="text-lg font-black text-dark-blue font-oswald uppercase italic">Corporate Inquiries</h4>
                 <p className="text-xs font-bold text-gray-400 leading-relaxed uppercase tracking-wider">For partnership opportunities, distribution requests, or corporate sales, please reach out directly to our head office.</p>
-                <div className="text-sm font-black text-dark-blue underline decoration-accent/30 underline-offset-4">business@mobex.com</div>
+                <div className="text-sm font-black text-dark-blue underline decoration-accent/30 underline-offset-4">info@baladexglobal.com</div>
               </div>
             </motion.div>
           </div>

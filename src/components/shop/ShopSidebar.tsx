@@ -216,8 +216,8 @@ export const ShopSidebar = () => {
             Need help <br /> deciding?
           </h4>
           <p className="text-white/60 text-xs mb-8 font-medium">Our specialists are ready to help you find the perfect match for your vehicle.</p>
-          <a href="tel:66685555" className="block w-full py-4 bg-accent text-dark-blue text-center font-black uppercase text-xs rounded-xl hover:bg-white transition-all transform group-hover:scale-[1.05]">
-            Call 6668 5555
+          <a href="tel:9737442444" className="block w-full py-4 bg-accent text-dark-blue text-center font-black uppercase text-xs rounded-xl hover:bg-white transition-all transform group-hover:scale-[1.05]">
+            Call 97374 42444
           </a>
         </div>
         <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-700" />

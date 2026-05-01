@@ -239,7 +239,7 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
               {/* User Header */}
               <div className="bg-[#004b7c] p-6 flex flex-col gap-6 text-white">
                  <div className="flex items-center justify-between">
-                    <img src="/logo.png" alt="MOBEX" className="h-8 w-auto object-contain brightness-0 invert" />
+                    <img src="/logo.png" alt="Baladex Global" className="h-8 w-auto object-contain brightness-0 invert" />
                     <Link 
                       href="/login" 
                       onClick={onClose}
