@@ -179,21 +179,21 @@ export const Promotions = ({ showBanners = true, showGrid = true }: { showBanner
                 Know what you pay for
               </h2>
               
-              <div className="w-full overflow-x-auto no-scrollbar pb-6">
-                <div className="grid grid-rows-2 grid-flow-col md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 min-w-max md:min-w-0 px-2 lg:px-0 h-[480px] md:h-auto">
+              <div className="w-full px-2 md:px-0">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
                   {usps.map((usp, i) => (
                     <div 
                       key={i} 
-                      className="w-[280px] md:w-auto flex flex-col items-center justify-center p-8 rounded-3xl bg-white shadow-sm border border-gray-100 group snap-start"
+                      className="flex flex-col items-center justify-center p-4 md:p-8 rounded-2xl md:rounded-3xl bg-white shadow-sm border border-gray-100 group"
                     >
-                      <div className="mb-6 flex items-center justify-center">
-                        <usp.icon className="w-16 h-16 text-[#ea1d22] stroke-[1.2]" />
+                      <div className="mb-4 md:mb-6 flex items-center justify-center">
+                        <usp.icon className="w-10 h-10 md:w-16 md:h-16 text-[#ea1d22] stroke-[1.2]" />
                       </div>
-                      <div className="text-center space-y-3">
-                        <h4 className="text-lg font-black text-black leading-tight">
+                      <div className="text-center space-y-2 md:space-y-3">
+                        <h4 className="text-[13px] md:text-lg font-black text-black leading-tight">
                           {usp.title}
                         </h4>
-                        <p className="text-[13px] text-gray-400 leading-relaxed font-medium max-w-[220px] mx-auto">
+                        <p className="text-[10px] md:text-[13px] text-gray-400 leading-tight md:leading-relaxed font-medium max-w-[180px] md:max-w-[220px] mx-auto">
                           {usp.desc}
                         </p>
                       </div>

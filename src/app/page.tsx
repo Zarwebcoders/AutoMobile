@@ -2,12 +2,12 @@ import { NavBar } from "@/components/layout/NavBar";
 import { Hero } from "@/components/home/Hero";
 import { HomeSlider } from "@/components/home/HomeSlider";
 import { FeaturedManufacturers } from "@/components/home/FeaturedManufacturers";
-import { FeaturedProducts } from "@/components/home/FeaturedProducts";
+
 import { AirFilterBanner } from "@/components/home/AirFilterBanner";
-import { BestDeals } from "@/components/home/BestDeals";
+
 import { Promotions } from "@/components/home/Promotions";
 import { SpecialBuys } from "@/components/home/SpecialBuys";
-import { MoreToLove } from "@/components/home/MoreToLove";
+
 import { ContentHub } from "@/components/home/ContentHub";
 import { Newsletter } from "@/components/home/Newsletter";
 import { Footer } from "@/components/layout/Footer";
@@ -21,7 +21,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <HomeSlider />
-      <FeaturedProducts />
+
       
       {/* Desktop Only: Combined Top Banners (Lamps + Air Filters) */}
       <div className="hidden lg:block bg-white">
@@ -29,9 +29,9 @@ export default function Home() {
       </div>
 
       <AirFilterBanner />
-      <BestDeals />
+
       <SpecialBuys />
-      <MoreToLove />
+
 
       {/* 
          On Desktop: This only shows the Grid and USP section.

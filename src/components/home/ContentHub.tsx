@@ -10,37 +10,37 @@ export const ContentHub = () => {
   return (
     <div className="space-y-0">
       {/* Blue Repair Section */}
-      <section className="bg-dark-blue py-16 text-white overflow-hidden">
+      <section className="bg-dark-blue py-10 lg:py-16 text-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-4 space-y-6 lg:space-y-8 text-center lg:text-left">
-              <h2 className="text-3xl lg:text-4xl font-black leading-tight">Bike repairs have <br /> never been so easy</h2>
-              <p className="text-white/60 text-sm font-medium leading-relaxed max-w-xs mx-auto lg:mx-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-4 space-y-4 lg:space-y-8 text-center lg:text-left">
+              <h2 className="text-2xl lg:text-4xl font-black leading-tight">Bike repairs have <br className="hidden lg:block" /> never been so easy</h2>
+              <p className="text-white/60 text-[13px] lg:text-sm font-medium leading-relaxed max-w-xs mx-auto lg:mx-0">
                 Say no to complicated instructions and confusing diagrams. Use the practical and easy motorcycle repair tutorials.
               </p>
-              <Button size="lg" className="bg-white text-dark-blue hover:bg-gray-100 font-black uppercase text-xs h-14 px-10 rounded-xl shadow-xl">
-                Read more <ArrowRight className="ml-2 w-4 h-4" />
+              <Button size="sm" className="bg-white text-dark-blue hover:bg-gray-100 font-black uppercase text-[10px] h-12 px-8 rounded-xl shadow-xl">
+                Read more <ArrowRight className="ml-2 w-3.5 h-3.5" />
               </Button>
             </div>
             
             <div className="lg:col-span-8">
-               {/* Mobile horizontal scroll / Desktop flex */}
-               <div className="flex overflow-x-auto lg:overflow-visible gap-6 pb-4 lg:pb-0 no-scrollbar snap-x snap-mandatory">
+               {/* Fixed horizontal scroll for all screens */}
+               <div className="flex overflow-x-auto gap-4 md:gap-6 pb-2 no-scrollbar snap-x snap-mandatory">
                   {[
-                    { title: 'Fuel temperature sensor: function and failure symptoms', img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=400' },
-                    { title: 'Radial vs Cross Ply Tyres: What\'s The Difference?', img: 'https://images.unsplash.com/photo-1486006396193-471a2abc9302?q=80&w=400' },
-                    { title: 'How to change brake pads on HONDA CBR600', img: 'https://images.unsplash.com/photo-1486262715619-67b85eb19ea3?q=80&w=400' }
+                    { title: 'Fuel temperature sensor: function and failure symptoms', img: '/images/tutorial-1.png' },
+                    { title: 'Radial vs Cross Ply Tyres: What\'s The Difference?', img: '/images/tutorial-2.png' },
+                    { title: 'How to change brake pads on HONDA CBR600', img: '/images/tutorial-3.png' }
                   ].map((item, i) => (
-                    <div key={i} className="min-w-[280px] md:min-w-[340px] flex-1 group cursor-pointer space-y-4 snap-center shrink-0">
-                      <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                        <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div key={i} className="min-w-[190px] md:min-w-[340px] group cursor-pointer space-y-3 snap-center shrink-0">
+                      <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-2xl">
+                        <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-12 h-12 rounded-full bg-[#EA580C] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                            <Play className="w-5 h-5 fill-current" />
+                          <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-[#EA580C] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <Play className="w-4 h-4 md:w-5 md:h-5 fill-current" />
                           </div>
                         </div>
                       </div>
-                      <h4 className="text-sm font-bold leading-tight group-hover:text-accent transition-colors line-clamp-2">{item.title}</h4>
+                      <h4 className="text-[11px] md:text-sm font-bold leading-tight group-hover:text-accent transition-colors line-clamp-2">{item.title}</h4>
                     </div>
                   ))}
                </div>
@@ -71,44 +71,44 @@ export const ContentHub = () => {
             {/* Subscribe Card - Visible only on Desktop as per design */}
             <div className="hidden lg:flex bg-[#ea1d22] rounded-[2.5rem] p-10 flex-col justify-between shadow-xl">
               <div className="space-y-2">
-                <h4 className="text-2xl font-black text-dark-blue">Get Exclusive Savings</h4>
-                <p className="text-xs text-dark-blue/70 font-bold uppercase tracking-tighter">Join over half a million tools lovers</p>
+                <h4 className="text-2xl font-black text-dark-blue uppercase tracking-tight leading-none">Get Exclusive Savings</h4>
+                <p className="text-[10px] text-dark-blue/80 font-black uppercase tracking-widest">Join over half a million bike lovers</p>
               </div>
-              <div className="space-y-3 mt-10">
-                <input type="text" placeholder="First Name" className="w-full h-12 rounded-xl border-none px-5 text-sm font-bold shadow-inner" />
-                <input type="email" placeholder="Email address" className="w-full h-12 rounded-xl border-none px-5 text-sm font-bold shadow-inner" />
-                <Button className="w-full h-14 bg-dark-blue text-white hover:bg-black font-black uppercase text-xs rounded-xl shadow-lg mt-2">
+              <div className="space-y-3 mt-8">
+                <input type="text" placeholder="First Name" className="w-full h-12 rounded-xl border border-dark-blue/10 bg-white/90 px-5 text-sm font-bold shadow-sm outline-none focus:bg-white transition-all" />
+                <input type="email" placeholder="Email address" className="w-full h-12 rounded-xl border border-dark-blue/10 bg-white/90 px-5 text-sm font-bold shadow-sm outline-none focus:bg-white transition-all" />
+                <Button className="w-full h-14 bg-dark-blue text-white hover:bg-dark-blue/90 font-black uppercase text-xs rounded-xl shadow-lg mt-2">
                   Subscribe <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
-              <p className="text-[10px] text-dark-blue/60 font-bold mt-10 leading-tight">
+              <p className="text-[9px] text-dark-blue/60 font-bold mt-8 leading-tight uppercase tracking-tighter">
                 By signing up you agree to receive emails from Baladex Global
               </p>
             </div>
 
             {/* News Cards */}
             {[
-              { date: '02 OCT', cat: 'News', title: 'The rise of premium sport bikes in 2026', img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=400' },
-              { date: '02 OCT', cat: 'Usefull', title: 'Warning lights indicating activation of various systems', img: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=400' },
-              { date: '02 OCT', cat: 'Premium', title: 'What to know about changing the engine oil and oil filters', img: 'https://images.unsplash.com/photo-1605341258814-22b069695028?q=80&w=400' },
-              { date: '02 OCT', cat: 'News', title: 'Motorcycle maintenance tips for long distance travel', img: 'https://images.unsplash.com/photo-1487754180451-c456f719c141?q=80&w=400' }
+              { date: '02 OCT', cat: 'News', title: 'The rise of premium sport bikes in 2026', img: '/images/news-1.png' },
+              { date: '02 OCT', cat: 'Technical', title: 'Warning lights indicating activation of various systems', img: '/images/news-2.png' },
+              { date: '02 OCT', cat: 'Maintenance', title: 'What to know about changing the engine oil and oil filters', img: '/images/news-3.png' },
+              { date: '02 OCT', cat: 'Travel', title: 'Motorcycle maintenance tips for long distance travel', img: '/images/news-4.png' }
             ].map((news, i) => (
               <Link key={i} href="/blog" className="w-full flex">
                 <motion.div whileHover={{ y: -10 }} className="flex flex-col group cursor-pointer shadow-sm rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-gray-100 h-full bg-white w-full">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img src={news.img} alt={news.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute top-2 left-2 md:top-4 md:left-4 bg-[#EA580C] text-white p-1.5 md:p-2.5 rounded-lg md:rounded-2xl flex flex-col items-center justify-center min-w-[35px] md:min-w-[55px] shadow-lg">
+                    <div className="absolute top-2 left-2 md:top-4 md:left-4 bg-[#ea1d22] text-white p-1.5 md:p-2.5 rounded-lg md:rounded-2xl flex flex-col items-center justify-center min-w-[35px] md:min-w-[55px] shadow-lg border border-white/20">
                       <span className="text-[10px] md:text-sm font-black leading-none">{news.date.split(' ')[0]}</span>
                       <span className="text-[7px] md:text-[9px] font-black uppercase tracking-tighter">{news.date.split(' ')[1]}</span>
                     </div>
                   </div>
                   <div className="p-4 md:p-8 flex flex-col gap-2 md:gap-4 flex-1">
-                    <span className="text-[8px] md:text-[10px] font-black uppercase text-gray-400 tracking-widest">{news.cat}</span>
-                    <h4 className="text-xs md:text-lg font-black text-dark-blue leading-tight line-clamp-2 uppercase h-8 md:h-14">
+                    <span className="text-[8px] md:text-[10px] font-black uppercase text-accent tracking-widest">{news.cat}</span>
+                    <h4 className="text-xs md:text-lg font-black text-dark-blue leading-tight line-clamp-2 uppercase h-8 md:h-14 font-oswald italic">
                       {news.title}
                     </h4>
                     <div className="mt-auto hidden md:block">
-                      <span className="text-xs font-black text-primary uppercase underline underline-offset-4 flex items-center gap-2 group-hover:text-accent transition-all duration-300">
+                      <span className="text-xs font-black text-dark-blue uppercase underline underline-offset-4 flex items-center gap-2 group-hover:text-accent transition-all duration-300">
                         Read more <ChevronRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -120,7 +120,6 @@ export const ContentHub = () => {
                   </div>
                 </motion.div>
               </Link>
-
             ))}
           </div>
         </div>

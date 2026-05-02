@@ -56,7 +56,7 @@ export default function AboutPage() {
           <img 
             src="/images/about-hero.png" 
             alt="About Baladex Global" 
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-50 object-[center_top]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-dark-blue/80 via-dark-blue/50 to-white" />
         </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
                   Built on Passion <br /> and Reliability
                 </h2>
               </div>
-              <div className="prose max-w-none text-gray-500 space-y-6 font-medium leading-relaxed">
+              <div className="prose max-w-none text-gray-500 space-y-6 font-medium leading-relaxed text-sm md:text-base px-1 md:px-0">
                 <p>Founded in 2009, Baladex Global started with a simple mission: to provide bikers and 2-wheeler enthusiasts with the highest quality parts at fair prices. What began as a small local workshop has grown into a nationwide network of distribution centers specializing in performance and reliability.</p>
                 <p>We understand that a motorcycle is more than just a machine; it's an extension of your freedom, your passion, and your lifestyle. That's why we never compromise on the quality of our stock, from high-performance engines to essential safety gear.</p>
               </div>

@@ -51,8 +51,8 @@ export default function ContactPage() {
       <NavBar />
       
       {/* Hero Section */}
-      <section className="bg-dark-blue pt-32 pb-20 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/contact-hero.png')] bg-cover bg-center opacity-30" />
+      <section className="bg-dark-blue pt-40 lg:pt-32 pb-20 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/contact-hero.png')] bg-cover bg-[center_top] opacity-30" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

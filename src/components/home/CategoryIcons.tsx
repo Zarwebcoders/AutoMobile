@@ -33,7 +33,7 @@ export const CategoryIcons = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-4"
             >
-              <div className="w-[100px] h-[100px] md:w-[130px] md:h-[130px] rounded-full bg-white/10 flex items-center justify-center p-3 md:p-5 transition-all duration-500 group-hover:bg-accent/20 overflow-hidden relative shadow-2xl border border-white/5 backdrop-blur-sm">
+              <div className="w-[85px] h-[85px] md:w-[130px] md:h-[130px] rounded-full bg-white/10 flex items-center justify-center p-3 md:p-5 transition-all duration-500 group-hover:bg-accent/20 overflow-hidden relative shadow-2xl border border-white/5 backdrop-blur-sm">
                  <img 
                    src={cat.image} 
                    alt={cat.name} 

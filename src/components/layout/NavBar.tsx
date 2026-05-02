@@ -51,13 +51,9 @@ export const NavBar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Shop', href: '/shop' },
-    // { name: 'Demos', href: '#' },
     { name: 'Shop by brand', href: '#' },
-    { name: 'Blog', href: '/blog' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact Us', href: '/contact' },
-    { name: 'Elements', href: '/elements' },
   ];
 
   return (
@@ -177,7 +173,7 @@ export const NavBar = () => {
         {/* Top Row: Logo, Cart, Menu */}
         <div className="flex items-center justify-between px-4 pt-5 pb-3">
           <Link href="/" className="flex items-center">
-            <img src="/logo.png" alt="Baladex Global" className="h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="Baladex Global" className="h-16 w-auto object-contain" />
           </Link>
           <div className="flex items-center gap-5">
             <div className="relative">
@@ -191,15 +187,15 @@ export const NavBar = () => {
         </div>
 
         {/* Search Bar Row - High Fidelity */}
-        <div className="px-4 pb-6">
-          <div className="bg-white rounded-xl flex items-center h-[54px] px-5 shadow-[0_10px_30px_rgba(0,0,0,0.15)] overflow-hidden">
-            <Search className="text-[#ea1d22] w-6 h-6 mr-3 shrink-0" strokeWidth={3} />
+        <div className="px-4 pb-5">
+          <div className="bg-white rounded-lg flex items-center h-[48px] px-4 shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+            <Search className="text-[#ea1d22] w-5 h-5 mr-3 shrink-0" strokeWidth={3} />
             <input
               type="text"
               placeholder="What are you looking for?"
-              className="flex-1 bg-transparent border-none outline-none text-gray-800 font-medium placeholder:text-gray-400 text-[16px]"
+              className="flex-1 bg-transparent border-none outline-none text-gray-800 font-medium placeholder:text-gray-400 text-[14px]"
             />
-            <Filter className="text-[#ea1d22] w-6 h-6 ml-2 shrink-0" strokeWidth={2.5} />
+            <Filter className="text-[#ea1d22] w-5 h-5 ml-2 shrink-0" strokeWidth={2.5} />
           </div>
         </div>
 
@@ -208,19 +204,21 @@ export const NavBar = () => {
           <div className="bg-gradient-to-b from-[#004b7c] to-[#015a91] pb-10 pt-4 border-t border-white/5 relative">
             <div className="w-full overflow-x-auto no-scrollbar flex items-start gap-4 px-4 snap-x snap-mandatory scroll-smooth touch-pan-x">
               {[
-                { name: 'Electrics', img: 'https://enovathemes.com/mobex/wp-content/uploads/Electrics.webp' },
-                { name: 'Engine', img: 'https://enovathemes.com/mobex/wp-content/uploads/Engine.webp' },
-                { name: 'Filters', img: 'https://enovathemes.com/mobex/wp-content/uploads/Air-conditioning.webp' },
-                { name: 'Interior', img: 'https://enovathemes.com/mobex/wp-content/uploads/Interior.webp' },
-                { name: 'Fluids', img: 'https://enovathemes.com/mobex/wp-content/uploads/Oils-and-fluids.webp' },
-                { name: 'Brakes', img: 'https://enovathemes.com/mobex/wp-content/uploads/Brakes.webp' },
-                { name: 'Body Parts', img: 'https://enovathemes.com/mobex/wp-content/uploads/Body.webp' },
+                { name: 'JPM', img: '/assets/JPM.svg', pdf: '/assets/JPM.pdf' },
+                { name: 'MK', img: '/assets/MK.png', pdf: '/assets/MK.pdf' },
+                { name: 'ROYAL ENFIELD', img: '/assets/ROYALENFIELD.jpg', pdf: '/assets/ROYALENFIELD.pdf' },
+                { name: 'SPACO', img: '/assets/SPACO.png', pdf: '/assets/SPACO.pdf' },
+                { name: 'Varroc', img: '/assets/Varroc.webp', pdf: '/assets/Varroc.pdf' },
+                { name: 'YANGO', img: '/assets/YANGO.png', pdf: '/assets/YANGO.pdf' },
               ].map((cat, i) => (
-                <div
+                <Link
                   key={i}
-                  className="flex flex-col items-center gap-3 shrink-0 snap-start min-w-[100px]"
+                  href={cat.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-3 shrink-0 snap-start min-w-[85px]"
                 >
-                  <div className="w-[100px] h-[100px] rounded-full bg-white/10 flex items-center justify-center p-3 border border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.3)] relative overflow-hidden group/cat active:scale-95 transition-all duration-300">
+                  <div className="w-[85px] h-[85px] rounded-full bg-white/10 flex items-center justify-center p-3 border border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.3)] relative overflow-hidden group/cat active:scale-95 transition-all duration-300">
                     <img
                       src={cat.img}
                       alt={cat.name}
@@ -231,7 +229,7 @@ export const NavBar = () => {
                   <span className="text-white text-[12px] font-black uppercase tracking-wider font-sans text-center whitespace-nowrap leading-none">
                     {cat.name}
                   </span>
-                </div>
+                </Link>
               ))}
               <div className="w-10 shrink-0 h-1" />
             </div>

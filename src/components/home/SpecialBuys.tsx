@@ -13,8 +13,9 @@ export const SpecialBuys = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="relative w-full h-auto min-h-[450px] md:h-[360px] rounded-3xl md:rounded-[4rem] flex flex-col items-center justify-center shadow-xl bg-[#e] overflow-hidden p-8 md:p-16"
+          className="relative w-full h-auto min-h-[450px] md:h-[360px] rounded-3xl md:rounded-[4rem] flex flex-col items-center justify-center shadow-xl bg-dark-blue overflow-hidden p-8 md:p-16"
         >
+          <div className="absolute inset-0 bg-[url('/images/special-buys-bg.png')] bg-cover bg-center opacity-40 mix-blend-overlay" />
           {/* Product Image - Top on Mobile, Left on Desktop */}
           <div className="relative md:absolute md:left-20 md:top-1/2 md:-translate-y-1/2 w-full max-w-[320px] md:max-w-[500px] mb-8 md:mb-0 z-20 pointer-events-none">
             <img 
