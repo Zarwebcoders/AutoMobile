@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const brands = [
   { name: 'JPM', color: 'bg-[#BC3120]', pdf: '/assets/JPM.pdf' },
