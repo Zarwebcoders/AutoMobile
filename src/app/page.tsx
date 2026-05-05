@@ -16,7 +16,7 @@ import { SchemaOrg } from "@/components/seo/SchemaOrg";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col font-sans selection:bg-accent selection:text-dark-blue overflow-x-hidden bg-white">
+    <main className="min-h-screen flex flex-col font-sans selection:bg-accent selection:text-dark-blue bg-white pb-20 md:pb-0">
       <SchemaOrg />
       <NavBar />
       <Hero />

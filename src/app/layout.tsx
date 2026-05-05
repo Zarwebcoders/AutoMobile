@@ -34,13 +34,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${oswald.variable} ${outfit.variable} h-full antialiased font-sans`}
+      className={`${oswald.variable} ${outfit.variable} min-h-full antialiased font-sans`}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <AuthProvider>
 
           {children}
-          <MobileBottomNav />
+          {/* <MobileBottomNav /> */}
           <FloatingContact />
         </AuthProvider>
       </body>

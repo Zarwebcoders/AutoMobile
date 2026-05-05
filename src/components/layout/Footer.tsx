@@ -27,7 +27,7 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
   };
 
   return (
-    <footer className="bg-[#111111] text-white pt-20 pb-10 overflow-hidden">
+    <footer className="bg-[#111111] text-white pt-20 pb-40 md:pb-10">
       <div className="container mx-auto px-4">
         
         {/* Desktop Footer (Hidden on Mobile) */}
@@ -198,20 +198,36 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
           <div className="h-px bg-gray-800/50 mx-4" />
 
           {/* Menus Grid */}
-          <div className="grid grid-cols-2 gap-8 px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6 px-6">
             <div className="space-y-5">
-              <h3 className="text-lg font-black text-white">Account</h3>
+              <h3 className="text-sm font-black uppercase tracking-tight text-white/50">Account</h3>
               <ul className="space-y-2.5">
                 {['Dashboard', 'Orders', 'Wishlist', 'My garage', 'Addresses'].map(item => (
-                  <li key={item}><Link href="#" className="text-[14px] font-bold text-gray-400 hover:text-white">{item}</Link></li>
+                  <li key={item}><Link href="#" className="text-[13px] font-bold text-gray-400 hover:text-white transition-colors">{item}</Link></li>
                 ))}
               </ul>
             </div>
             <div className="space-y-5">
-              <h3 className="text-lg font-black text-white">Catalog</h3>
+              <h3 className="text-sm font-black uppercase tracking-tight text-white/50">Catalog</h3>
               <ul className="space-y-2.5">
                 {['Shop by parts', 'Shop by brands', 'Shop by make', 'Promotions', 'Sitemap'].map(item => (
-                  <li key={item}><Link href="#" className="text-[14px] font-bold text-gray-400 hover:text-white">{item}</Link></li>
+                  <li key={item}><Link href="/shop" className="text-[13px] font-bold text-gray-400 hover:text-white transition-colors">{item}</Link></li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-5 col-span-2 md:col-span-1">
+              <h3 className="text-sm font-black uppercase tracking-tight text-white/50">Help</h3>
+              <ul className="space-y-2.5 grid grid-cols-2 gap-x-4">
+                {[
+                  { name: 'Features', href: '/elements' },
+                  { name: 'FAQ', href: '/faq' },
+                  { name: 'About us', href: '/about' },
+                  { name: 'Career', href: '/career' },
+                  { name: 'Contact us', href: '/contact' }
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-[13px] font-bold text-gray-400 hover:text-white transition-colors">{item.name}</Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -223,39 +239,43 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
           <div className="flex flex-col items-center space-y-8 px-4">
 
 
-            <div className="space-y-10 w-full max-w-xs mx-auto">
-               <div className="flex items-start gap-4 justify-center text-center flex-col items-center">
-                  <div className="w-12 h-12 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
+            <div className="space-y-8 w-full max-w-sm mx-auto">
+               {/* Location */}
+               <div className="flex items-center gap-5 px-4">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
                     <MapPin size={24} className="text-accent" />
                   </div>
-                  <div className="text-[14px] font-black text-white leading-tight">
+                  <div className="text-[14px] font-black text-white leading-snug">
+                    <span className="block text-gray-500 font-bold text-[10px] uppercase tracking-wider mb-0.5">Our Location</span>
                     7031 N 35th Ave, Phoenix <br />
-                    <span className="text-gray-500 font-bold">Arkansas United States</span>
+                    <span className="text-gray-500 font-bold text-[12px]">Arkansas United States</span>
                   </div>
                </div>
 
-               <div className="flex items-start gap-4 justify-center text-center flex-col items-center">
-                  <div className="w-12 h-12 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
+               {/* Phone */}
+               <div className="flex items-center gap-5 px-4">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
                     <Phone size={24} className="text-accent" />
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-[13px] font-bold text-gray-400">Call us between 8 AM - 10 PM</p>
-                    <a href="tel:+919737442444" className="text-2xl font-black text-accent tracking-tighter leading-none block">97374 42444</a>
+                  <div className="space-y-0.5">
+                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Call us 8 AM - 10 PM</p>
+                    <a href="tel:+919737442444" className="text-xl font-black text-accent tracking-tighter leading-none block">97374 42444</a>
                   </div>
                </div>
 
+               {/* Live Chat */}
                 <a 
                   href="https://wa.me/919737442444"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 justify-center text-center flex-col items-center group cursor-pointer"
+                  className="flex items-center gap-5 px-4 group cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
+                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
                     <MessageSquare size={24} className="text-accent group-hover:scale-110 transition-transform" />
                   </div>
                   <div className="space-y-0.5">
-                    <h6 className="text-[16px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
-                    <p className="text-[13px] font-bold text-gray-500">Chat with an Expert</p>
+                    <h6 className="text-[15px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
+                    <p className="text-[12px] font-bold text-gray-500">Chat with an Expert</p>
                   </div>
                 </a>
             </div>

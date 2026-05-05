@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, User, ShoppingBag, LayoutGrid, FileText, ChevronDown, UserPlus, LogIn, Car, Search as SearchIcon, Star, ChevronRightCircle } from 'lucide-react';
 import { getCategories } from '@/lib/api';
@@ -60,16 +61,17 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
 
   const isModalView = ['car-filter', 'search', 'shop-filter'].includes(activeTab);
 
-  const toggleCategory = (id: string, hasSub: boolean) => {
-    if (!hasSub) return;
-    setExpandedCategory(expandedCategory === id ? null : id);
+  const router = useRouter();
+  const toggleCategory = (cat: any) => {
+    const hasSub = cat.groups && cat.groups.length > 0;
+    if (!hasSub) {
+      router.push(`/shop?category=${cat.id || cat._id}`);
+      onClose();
+      return;
+    }
+    setExpandedCategory(expandedCategory === cat._id ? null : cat._id);
   };
 
-  const menuItems = [
-    { name: 'Shop', href: '/shop' },
-    { name: 'Elements', href: '/elements' },
-    { name: 'Blog', href: '/blog' },
-  ];
 
   return (
     <AnimatePresence>
@@ -239,7 +241,7 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
               {/* User Header */}
               <div className="bg-[#004b7c] p-6 flex flex-col gap-6 text-white">
                  <div className="flex items-center justify-between">
-                    <img src="/logo.png" alt="Baladex Global" className="h-8 w-auto object-contain brightness-0 invert" />
+                    <img src="/logo.png" alt="Baladex Global" className="h-16 w-auto object-contain brightness-0 invert" />
                     <Link 
                       href="/login" 
                       onClick={onClose}
@@ -269,7 +271,7 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
 
               {/* Tabset */}
               <div className="tabset mobile-tabset flex border-b border-gray-100 bg-[#f7f7f7]">
-                {(['menu', 'categories', 'account'] as TabType[]).map((tab) => (
+                {(['categories', 'account'] as TabType[]).map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
@@ -289,27 +291,6 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
               {/* Content Area */}
               <div className="flex-1 overflow-y-auto no-scrollbar bg-white">
                 <AnimatePresence mode="wait">
-                  {activeTab === 'menu' && (
-                    <motion.div
-                      key="menu"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="divide-y divide-gray-50"
-                    >
-                      {menuItems.map((item, idx) => (
-                        <Link
-                          key={idx}
-                          href={item.href}
-                          onClick={onClose}
-                          className="flex items-center justify-between p-5 hover:bg-gray-50 group"
-                        >
-                          <span className="text-sm font-bold text-dark-blue uppercase tracking-tight">{item.name}</span>
-                          <ChevronRight size={16} className="text-gray-300 group-hover:text-accent transform group-hover:translate-x-1 transition-all" />
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
 
                   {activeTab === 'categories' && (
                     <motion.div
@@ -323,7 +304,15 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
                           <li key={cat._id} className="flex flex-col">
                             <div 
                               className="flex items-center justify-between p-4 px-6 group cursor-pointer hover:bg-gray-50 transition-colors"
-                              onClick={() => toggleCategory(cat._id, !!cat.subcategories)}
+                              onClick={() => {
+                                const hasSub = cat.groups && cat.groups.length > 0;
+                                if (!hasSub) {
+                                  router.push(`/shop?category=${cat.id || cat._id}`);
+                                  onClose();
+                                } else {
+                                  setExpandedCategory(expandedCategory === cat._id ? null : cat._id);
+                                }
+                              }}
                             >
                               <div className="flex items-center gap-4">
                                 <span 
@@ -337,7 +326,7 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
                                   {cat.name}
                                 </span>
                               </div>
-                              {cat.subcategories && (
+                              {cat.groups && cat.groups.length > 0 && (
                                 <ChevronRight 
                                   size={14} 
                                   className={cn("text-gray-300 transition-transform duration-300", expandedCategory === cat._id ? "rotate-90 text-accent" : "")} 
@@ -346,24 +335,24 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
                             </div>
 
                             <AnimatePresence>
-                              {expandedCategory === cat._id && cat.subcategories && (
+                              {expandedCategory === cat._id && cat.groups && (
                                 <motion.ul
                                   initial={{ height: 0 }}
                                   animate={{ height: 'auto' }}
                                   exit={{ height: 0 }}
                                   className="overflow-hidden bg-[#fafafa] border-t border-gray-50"
                                 >
-                                  {cat.subcategories.map((sub: any, sIdx: number) => (
-                                    <li key={sIdx}>
+                                  {cat.groups.flatMap((g: any) => g.items || []).map((item: any, i: number) => (
+                                    <li key={i}>
                                       <Link 
-                                        href={sub.href || `/shop?category=${cat.id}&query=${sub.name}`}
+                                        href={item.href || `/shop?category=${cat.id || cat._id}&query=${item.name}`}
                                         onClick={onClose}
                                         className={cn(
                                           "block py-3 px-14 text-xs font-bold transition-all border-b border-gray-50/50 last:border-b-0",
-                                          sub.isViewAll ? "text-accent" : "text-gray-500 hover:text-dark-blue"
+                                          item.isViewAll ? "text-accent" : "text-gray-500 hover:text-dark-blue"
                                         )}
                                       >
-                                        {sub.name}
+                                        {item.name}
                                       </Link>
                                     </li>
                                   ))}

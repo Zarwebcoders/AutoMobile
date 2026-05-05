@@ -10,37 +10,37 @@ export const ContentHub = () => {
   return (
     <div className="space-y-0">
       {/* Blue Repair Section */}
-      <section className="bg-dark-blue py-10 lg:py-16 text-white overflow-hidden">
+      <section className="bg-dark-blue py-6 lg:py-16 text-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-4 space-y-4 lg:space-y-8 text-center lg:text-left">
-              <h2 className="text-2xl lg:text-4xl font-black leading-tight">Bike repairs have <br className="hidden lg:block" /> never been so easy</h2>
-              <p className="text-white/60 text-[13px] lg:text-sm font-medium leading-relaxed max-w-xs mx-auto lg:mx-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+            <div className="lg:col-span-4 space-y-3 lg:space-y-8 text-center lg:text-left">
+              <h2 className="text-xl lg:text-4xl font-black leading-tight">Bike repairs have <br className="hidden lg:block" /> never been so easy</h2>
+              <p className="text-white/60 text-[12px] lg:text-sm font-medium leading-relaxed max-w-xs mx-auto lg:mx-0">
                 Say no to complicated instructions and confusing diagrams. Use the practical and easy motorcycle repair tutorials.
               </p>
-              <Button size="sm" className="bg-white text-dark-blue hover:bg-gray-100 font-black uppercase text-[10px] h-12 px-8 rounded-xl shadow-xl">
-                Read more <ArrowRight className="ml-2 w-3.5 h-3.5" />
+              <Button size="sm" className="bg-white text-dark-blue hover:bg-gray-100 font-black uppercase text-[9px] h-10 px-6 rounded-lg shadow-xl">
+                Read more <ArrowRight className="ml-2 w-3 h-3" />
               </Button>
             </div>
             
             <div className="lg:col-span-8">
                {/* Fixed horizontal scroll for all screens */}
-               <div className="flex overflow-x-auto gap-4 md:gap-6 pb-2 no-scrollbar snap-x snap-mandatory">
+               <div className="flex overflow-x-auto gap-3 md:gap-6 pb-2 no-scrollbar snap-x snap-mandatory">
                   {[
                     { title: 'Fuel temperature sensor: function and failure symptoms', img: '/images/tutorial-1.png' },
                     { title: 'Radial vs Cross Ply Tyres: What\'s The Difference?', img: '/images/tutorial-2.png' },
                     { title: 'How to change brake pads on HONDA CBR600', img: '/images/tutorial-3.png' }
                   ].map((item, i) => (
-                    <div key={i} className="min-w-[190px] md:min-w-[340px] group cursor-pointer space-y-3 snap-center shrink-0">
-                      <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-2xl">
+                    <div key={i} className="w-[180px] md:w-[340px] group cursor-pointer space-y-2 snap-center shrink-0">
+                      <div className="relative w-full h-[100px] md:h-auto md:aspect-video rounded-lg md:rounded-2xl overflow-hidden shadow-lg md:shadow-2xl">
                         <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-[#EA580C] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                            <Play className="w-4 h-4 md:w-5 md:h-5 fill-current" />
+                          <div className="w-7 h-7 md:w-12 md:h-12 rounded-full bg-[#EA580C] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <Play className="w-3 h-3 md:w-5 md:h-5 fill-current" />
                           </div>
                         </div>
                       </div>
-                      <h4 className="text-[11px] md:text-sm font-bold leading-tight group-hover:text-accent transition-colors line-clamp-2">{item.title}</h4>
+                      <h4 className="text-[10px] md:text-sm font-bold leading-tight group-hover:text-accent transition-colors line-clamp-2">{item.title}</h4>
                     </div>
                   ))}
                </div>

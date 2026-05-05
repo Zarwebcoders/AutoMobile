@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type TabType = 'menu' | 'categories' | 'account' | 'car-filter' | 'search' | 'shop-filter';
+export type TabType = 'categories' | 'account' | 'car-filter' | 'search' | 'shop-filter';
 
 interface UIState {
   isMobileSideBarOpen: boolean;
@@ -12,8 +12,8 @@ interface UIState {
 
 export const useUIStore = create<UIState>((set) => ({
   isMobileSideBarOpen: false,
-  activeMobileTab: 'menu',
-  openMobileSideBar: (tab = 'menu') => set({ isMobileSideBarOpen: true, activeMobileTab: tab }),
+  activeMobileTab: 'categories',
+  openMobileSideBar: (tab = 'categories') => set({ isMobileSideBarOpen: true, activeMobileTab: tab }),
   closeMobileSideBar: () => set({ isMobileSideBarOpen: false }),
   setActiveMobileTab: (tab) => set({ activeMobileTab: tab }),
 }));
