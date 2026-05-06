@@ -242,13 +242,13 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
               <div className="bg-[#004b7c] p-6 flex flex-col gap-6 text-white">
                  <div className="flex items-center justify-between">
                     <img src="/logo.png" alt="Baladex Global" className="h-16 w-auto object-contain brightness-0 invert" />
-                    <Link 
+                    {/* <Link 
                       href="/login" 
                       onClick={onClose}
                       className="px-3 py-1.5 border border-white/30 rounded-lg text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-dark-blue transition-all"
                     >
                       Login
-                    </Link>
+                    </Link> */}
                  </div>
                  <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full border-2 border-white/20 flex items-center justify-center bg-white/5">
@@ -256,7 +256,7 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
                     </div>
                     <div>
                       <h3 className="text-sm font-black uppercase tracking-tight">Hello Guest</h3>
-                      <p className="text-[10px] font-bold opacity-60 uppercase tracking-widest leading-none mt-1">For better experience login</p>
+                      {/* <p className="text-[10px] font-bold opacity-60 uppercase tracking-widest leading-none mt-1">For better experience login</p> */}
                     </div>
                  </div>
               </div>
@@ -270,7 +270,7 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
               </button>
 
               {/* Tabset */}
-              <div className="tabset mobile-tabset flex border-b border-gray-100 bg-[#f7f7f7]">
+              {/* <div className="tabset mobile-tabset flex border-b border-gray-100 bg-[#f7f7f7]">
                 {(['categories', 'account'] as TabType[]).map((tab) => (
                   <button
                     key={tab}
@@ -286,113 +286,77 @@ export const MobileSideBar = ({ navLinks = [] }: MobileSideBarProps) => {
                     )}
                   </button>
                 ))}
-              </div>
+              </div> */}
 
               {/* Content Area */}
               <div className="flex-1 overflow-y-auto no-scrollbar bg-white">
-                <AnimatePresence mode="wait">
+                <div className="p-4">
+                  <ul className="space-y-1">
+                    {navLinks.map((link) => (
+                      <li key={link.name} className="flex flex-col">
+                        <div 
+                          className="flex items-center justify-between p-4 px-6 group cursor-pointer hover:bg-gray-50 transition-colors border-b border-gray-50"
+                          onClick={() => {
+                            if (link.name === 'Shop by brand') {
+                              setExpandedCategory(expandedCategory === 'brands' ? null : 'brands');
+                            } else {
+                              router.push(link.href);
+                              onClose();
+                            }
+                          }}
+                        >
+                          <span className={cn("text-sm font-black uppercase tracking-tight", (expandedCategory === 'brands' && link.name === 'Shop by brand') ? "text-accent" : "text-dark-blue")}>
+                            {link.name}
+                          </span>
+                          {link.name === 'Shop by brand' && (
+                            <ChevronRight 
+                              size={16} 
+                              className={cn("text-gray-300 transition-transform duration-300", expandedCategory === 'brands' ? "rotate-90 text-accent" : "")} 
+                            />
+                          )}
+                        </div>
 
-                  {activeTab === 'categories' && (
-                    <motion.div
-                      key="categories"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                    >
-                      <ul className="divide-y divide-gray-50 border-b border-gray-50">
-                        {categories.map((cat) => (
-                          <li key={cat._id} className="flex flex-col">
-                            <div 
-                              className="flex items-center justify-between p-4 px-6 group cursor-pointer hover:bg-gray-50 transition-colors"
-                              onClick={() => {
-                                const hasSub = cat.groups && cat.groups.length > 0;
-                                if (!hasSub) {
-                                  router.push(`/shop?category=${cat.id || cat._id}`);
-                                  onClose();
-                                } else {
-                                  setExpandedCategory(expandedCategory === cat._id ? null : cat._id);
-                                }
-                              }}
-                            >
-                              <div className="flex items-center gap-4">
-                                <span 
-                                  className="w-5 h-5 bg-gray-400 group-hover:bg-accent transition-colors"
-                                  style={{
-                                    WebkitMask: `url(${cat.icon}) no-repeat center / contain`,
-                                    mask: `url(${cat.icon}) no-repeat center / contain`
-                                  }}
-                                />
-                                <span className={cn("text-[13px] font-bold uppercase tracking-tight", expandedCategory === cat._id ? "text-accent" : "text-dark-blue")}>
-                                  {cat.name}
-                                </span>
-                              </div>
-                              {cat.groups && cat.groups.length > 0 && (
-                                <ChevronRight 
-                                  size={14} 
-                                  className={cn("text-gray-300 transition-transform duration-300", expandedCategory === cat._id ? "rotate-90 text-accent" : "")} 
-                                />
-                              )}
-                            </div>
-
-                            <AnimatePresence>
-                              {expandedCategory === cat._id && cat.groups && (
-                                <motion.ul
-                                  initial={{ height: 0 }}
-                                  animate={{ height: 'auto' }}
-                                  exit={{ height: 0 }}
-                                  className="overflow-hidden bg-[#fafafa] border-t border-gray-50"
-                                >
-                                  {cat.groups.flatMap((g: any) => g.items || []).map((item: any, i: number) => (
-                                    <li key={i}>
-                                      <Link 
-                                        href={item.href || `/shop?category=${cat.id || cat._id}&query=${item.name}`}
-                                        onClick={onClose}
-                                        className={cn(
-                                          "block py-3 px-14 text-xs font-bold transition-all border-b border-gray-50/50 last:border-b-0",
-                                          item.isViewAll ? "text-accent" : "text-gray-500 hover:text-dark-blue"
-                                        )}
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    </li>
+                        {link.name === 'Shop by brand' && (
+                          <AnimatePresence>
+                            {expandedCategory === 'brands' && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="overflow-hidden bg-[#fafafa]"
+                              >
+                                <div className="grid grid-cols-2 gap-4 p-6">
+                                  {[
+                                    { name: 'JPM', img: '/assets/JPM.svg', pdf: '/assets/JPM.pdf' },
+                                    { name: 'MK', img: '/assets/MK.png', pdf: '/assets/MK.pdf' },
+                                    { name: 'ROYAL ENFIELD', img: '/assets/ROYALENFIELD.jpg', pdf: '/assets/ROYALENFIELD.pdf' },
+                                    { name: 'SPACO', img: '/assets/SPACO.png', pdf: '/assets/SPACO.pdf' },
+                                    { name: 'Varroc', img: '/assets/Varroc.webp', pdf: '/assets/Varroc.pdf' },
+                                    { name: 'YANGO', img: '/assets/YANGO.png', pdf: '/assets/YANGO.pdf' },
+                                  ].map((brand, i) => (
+                                    <Link 
+                                      key={i}
+                                      href={brand.pdf}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onClick={onClose}
+                                      className="flex flex-col items-center gap-3 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 active:scale-95 transition-all"
+                                    >
+                                      <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center p-2 border border-gray-100 shadow-inner">
+                                        <img src={brand.img} alt={brand.name} className="w-full h-full object-contain" />
+                                      </div>
+                                      <span className="text-[10px] font-black uppercase tracking-wider text-dark-blue text-center">{brand.name}</span>
+                                    </Link>
                                   ))}
-                                </motion.ul>
-                              )}
-                            </AnimatePresence>
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  )}
-
-                  {activeTab === 'account' && (
-                    <motion.div
-                      key="account"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="p-8 space-y-6"
-                    >
-                      <form className="space-y-6">
-                        <div className="space-y-2">
-                          <label className="text-[11px] font-black text-gray-400 uppercase tracking-[0.15em]">Username</label>
-                          <input type="text" className="w-full h-14 bg-gray-50 border border-gray-100 rounded-xl px-5 outline-none focus:border-accent font-medium text-sm" />
-                        </div>
-                        <div className="space-y-2">
-                          <label className="text-[11px] font-black text-gray-400 uppercase tracking-[0.15em]">Password</label>
-                          <input type="password" className="w-full h-14 bg-gray-50 border border-gray-100 rounded-xl px-5 outline-none focus:border-accent font-medium text-sm" />
-                        </div>
-                        <button className="bg-dark-blue text-white px-8 h-12 rounded-lg font-black uppercase text-[11px] tracking-widest shadow-xl hover:bg-black transition-all active:scale-95">
-                          Log In
-                        </button>
-                      </form>
-                      <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                         <Link href="#" className="text-[10px] font-black text-gray-400 uppercase tracking-widest hover:text-accent">Forgot password?</Link>
-                         <Link href="#" className="text-[10px] font-black text-dark-blue uppercase tracking-widest hover:text-accent">Sign up</Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </motion.div>
           )}

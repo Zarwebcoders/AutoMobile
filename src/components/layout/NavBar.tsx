@@ -96,13 +96,13 @@ export const NavBar = () => {
                 <img src="/logo.png" alt="Logo" className="h-16 w-auto object-contain" />
               </Link>
               <div className="flex items-center gap-10 flex-1">
-                <div 
+                {/* <div 
                   onMouseEnter={() => setIsMegaMenuOpen(true)}
                   className="flex items-center gap-3 bg-[#ef233c] text-white px-6 py-3 rounded-xl cursor-pointer font-black uppercase text-xs shadow-lg shadow-[#ef233c]/20 hover:scale-105 transition-all"
                 >
                   <Menu className="w-4 h-4" />
                   <span className="border-b-2 border-dark-blue/20 pb-0.5">All categories</span>
-                </div>
+                </div> */}
                 <nav className="flex items-center gap-8 font-black text-[13px] uppercase tracking-wide">
                   {navLinks.map((link) => (
                     <Link 
