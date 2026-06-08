@@ -60,8 +60,8 @@ export const VehicleSelector = () => {
       <div className="bg-[#ea1d22] rounded-4xl p-3 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
         <div className="flex flex-col lg:flex-row items-center gap-4 p-2">
           
-          {/* Cascading Dropdowns */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 w-full lg:w-auto">
+          {/* Brand Dropdown */}
+          <div className="flex-1 w-full lg:w-auto">
             <div className="relative group">
               <select 
                 value={make}
@@ -70,48 +70,6 @@ export const VehicleSelector = () => {
               >
                 <option value="">Brand</option>
                 {MAKES.map(m => <option key={m} value={m}>{m}</option>)}
-              </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-hover:text-dark-blue transition-colors" />
-            </div>
-
-            <div className="relative group">
-              <select 
-                disabled={!make}
-                value={model}
-                onChange={(e) => setModel(e.target.value)}
-                className="w-full h-14 pl-5 pr-10 rounded-xl bg-white border-none appearance-none cursor-pointer focus:ring-2 focus:ring-dark-blue transition-all text-[13px] font-bold text-gray-700 disabled:opacity-50"
-              >
-                <option value="">Model</option>
-                {make && MODELS[make as keyof typeof MODELS]?.map(m => (
-                  <option key={m} value={m}>{m}</option>
-                ))}
-              </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-hover:text-dark-blue transition-colors" />
-            </div>
-
-            <div className="relative group">
-              <select 
-                disabled={!model}
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
-                className="w-full h-14 pl-5 pr-10 rounded-xl bg-white border-none appearance-none cursor-pointer focus:ring-2 focus:ring-dark-blue transition-all text-[13px] font-bold text-gray-700 disabled:opacity-50"
-              >
-                <option value="">Year</option>
-                {[2024, 2023, 2022, 2021, 2020].map(y => <option key={y} value={y}>{y}</option>)}
-              </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-hover:text-dark-blue transition-colors" />
-            </div>
-
-            <div className="relative group">
-              <select 
-                disabled={!year}
-                value={engine}
-                onChange={(e) => setEngine(e.target.value)}
-                className="w-full h-14 pl-5 pr-10 rounded-xl bg-white border-none appearance-none cursor-pointer focus:ring-2 focus:ring-dark-blue transition-all text-[13px] font-bold text-gray-700 disabled:opacity-50"
-              >
-                <option value="">Engine</option>
-                <option value="2.0L">2.0L Turbo</option>
-                <option value="3.0L">3.0L V6</option>
               </select>
               <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-hover:text-dark-blue transition-colors" />
             </div>
