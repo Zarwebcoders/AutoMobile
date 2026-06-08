@@ -4,7 +4,26 @@ import React from 'react';
 import { Search } from 'lucide-react';
 import { useVehicleStore } from '@/store/useVehicleStore';
 
-const MAKES = ['Audi', 'BMW', 'Bentley', 'Cadillac', 'Chevrolet', 'Dodge', 'Ford', 'Honda', 'Hyundai', 'Infiniti', 'KIA', 'Lamborghini', 'Lexus', 'Lincoln', 'Maybach', 'Mazda', 'Mercedes-Benz', 'Mitsubishi', 'Nissan', 'Porsche', 'Rolls-Royce', 'Toyota', 'Volkswagen', 'Volvo'];
+const MAKES = [
+  'Charn Chain Cover',
+  'Goetz Piston',
+  'Hero Rockman',
+  'Jushin',
+  'MK Clutch',
+  'Nappino',
+  'OE-Pro Gasket',
+  'Power Coil',
+  'RMP Bearing',
+  'Sandhar',
+  'Solance Battery',
+  'Spaco Carburator',
+  'Suprajit',
+  'Swiss Wiring',
+  'Ucal Carburator',
+  'Usha Piston',
+  'Varroc',
+  'Yango Light'
+];
 
 export const ShopFilterBar = () => {
     const { 

@@ -7,7 +7,26 @@ import { useVehicleStore } from '@/store/useVehicleStore';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 
-const MAKES = ['Audi', 'BMW', 'Chevrolet', 'Ford', 'Honda', 'Toyota'];
+const MAKES = [
+  'Charn Chain Cover',
+  'Goetz Piston',
+  'Hero Rockman',
+  'Jushin',
+  'MK Clutch',
+  'Nappino',
+  'OE-Pro Gasket',
+  'Power Coil',
+  'RMP Bearing',
+  'Sandhar',
+  'Solance Battery',
+  'Spaco Carburator',
+  'Suprajit',
+  'Swiss Wiring',
+  'Ucal Carburator',
+  'Usha Piston',
+  'Varroc',
+  'Yango Light'
+];
 const MODELS = {
   'Audi': ['A3', 'A4', 'A6', 'Q5', 'Q7'],
   'BMW': ['3 Series', '5 Series', 'X3', 'X5'],

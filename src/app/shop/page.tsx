@@ -23,7 +23,26 @@ const SHOP_CATEGORIES = [
   { name: 'Damping', image: 'https://enovathemes.com/mobex/wp-content/uploads/Damping.webp' },
 ];
 
-const MAKES = ['Audi', 'BMW', 'Bentley', 'Cadillac', 'Chevrolet', 'Dodge', 'Ford', 'Honda', 'Hyundai', 'Infiniti', 'KIA', 'Lamborghini', 'Lexus', 'Lincoln', 'Maybach', 'Mazda', 'Mercedes-Benz', 'Mitsubishi', 'Nissan', 'Porsche', 'Rolls-Royce', 'Toyota', 'Volkswagen', 'Volvo'];
+const MAKES = [
+  'Charn Chain Cover',
+  'Goetz Piston',
+  'Hero Rockman',
+  'Jushin',
+  'MK Clutch',
+  'Nappino',
+  'OE-Pro Gasket',
+  'Power Coil',
+  'RMP Bearing',
+  'Sandhar',
+  'Solance Battery',
+  'Spaco Carburator',
+  'Suprajit',
+  'Swiss Wiring',
+  'Ucal Carburator',
+  'Usha Piston',
+  'Varroc',
+  'Yango Light'
+];
 const MODELS: Record<string, string[]> = {
   'BMW': ['1', '3', '5', '6', 'X5', 'X6'],
   'Audi': ['A3', 'A4', 'A6', 'Q5', 'Q7'],
