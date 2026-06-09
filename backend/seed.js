@@ -56,6 +56,14 @@ const seedData = async () => {
       role: 'Super Admin'
     });
 
+    // Create Staff User (Regular User for frontend panel)
+    await User.create({
+      name: 'Test Staff',
+      email: 'user@mobex.com',
+      password: 'password123',
+      role: 'Staff'
+    });
+
     // Insert data
     await Product.insertMany(products);
     await Category.insertMany(categories);

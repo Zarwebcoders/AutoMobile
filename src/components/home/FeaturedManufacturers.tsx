@@ -8,8 +8,8 @@ import { cn } from '@/lib/utils';
 const brands = [
   { name: 'JPM', color: 'bg-[#BC3120]', pdf: '/assets/JPM.pdf' },
   { name: 'MK', color: 'bg-[#2D8F4E]', pdf: '/assets/MK.pdf' },
-  { name: 'ROYAL ENFIELD', color: 'bg-[#034C8C]', pdf: '/assets/ROYALENFIELD.pdf' },
-  { name: 'SPACO', color: 'bg-[#F2C94C]', pdf: '/assets/SPACO.pdf' },
+  { name: 'SANDHAR', color: 'bg-[#034C8C]', pdf: '/assets/SANDHAR.pdf' },
+  { name: 'ENDURANCE', color: 'bg-[#F2C94C]', pdf: '/assets/ENDURANCE.pdf' },
   { name: 'Varroc', color: 'bg-[#6FCF97]', pdf: '/assets/Varroc.pdf' },
   { name: 'YANGO', color: 'bg-[#EB5757]', pdf: '/assets/YANGO.pdf' },
 ];

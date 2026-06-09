@@ -168,8 +168,8 @@ export const NavBar = () => {
             {[
               { name: 'JPM', img: '/assets/JPM.svg', pdf: '/assets/JPM.pdf' },
               { name: 'MK', img: '/assets/MK.png', pdf: '/assets/MK.pdf' },
-              { name: 'ROYAL ENFIELD', img: '/assets/ROYALENFIELD.jpg', pdf: '/assets/ROYALENFIELD.pdf' },
-              { name: 'SPACO', img: '/assets/SPACO.png', pdf: '/assets/SPACO.pdf' },
+              { name: 'SANDHAR', img: '/assets/SANDHAR.png', pdf: '/assets/SANDHAR.pdf' },
+              { name: 'ENDURANCE', img: '/assets/ENDURANCE.png', pdf: '/assets/ENDURANCE.pdf' },
               { name: 'Varroc', img: '/assets/Varroc.webp', pdf: '/assets/Varroc.pdf' },
               { name: 'YANGO', img: '/assets/YANGO.png', pdf: '/assets/YANGO.pdf' },
             ].map((cat, i) => (

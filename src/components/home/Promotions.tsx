@@ -1,38 +1,118 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Truck, RotateCcw, Zap, Settings, MapPin, ChevronRight, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
+const airFilterSlides = [
+  { src: '/images/air_filter.png',   alt: 'Sandhar Air Filter',   brand: 'SANDHAR AIR FILTER'   },
+  { src: '/images/air_filter_2.png', alt: 'Suprajit Air Filter',  brand: 'SUPRAJIT AIR FILTER'  },
+];
+
+function AirFilterSlider() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % airFilterSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="hidden lg:flex relative h-[450px] bg-[#ea1d22] rounded-[40px] overflow-hidden flex-col justify-center group p-12 lg:col-span-1">
+      {/* Text content */}
+      <div className="relative z-10">
+        <span className="bg-[#bc3120] text-white text-[10px] font-black px-2.5 py-1 rounded w-fit mb-5 inline-block uppercase tracking-wider">
+          Big Sales!
+        </span>
+        <h3 className="text-6xl font-black text-black uppercase tracking-tight leading-none mb-3">
+          AIR FILTERS
+        </h3>
+        {/* Dynamic brand label — changes with each slide */}
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={current}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{    opacity: 0, y: -6 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="text-white font-black text-sm mb-1 uppercase tracking-widest"
+          >
+            {airFilterSlides[current].brand}
+          </motion.p>
+        </AnimatePresence>
+        <p className="text-black font-bold text-lg mb-8 uppercase tracking-widest opacity-80">
+          Premium quality
+        </p>
+        <Link
+          href="/shop?q=air+filter"
+          className="inline-flex items-center justify-center bg-white text-black px-8 py-3.5 rounded-xl font-black hover:bg-black hover:text-white transition-all text-sm shadow-md gap-3 w-fit"
+        >
+          Shop now
+          <ArrowRight size={18} strokeWidth={3} />
+        </Link>
+      </div>
+
+      {/* Sliding product image */}
+      <div className="absolute right-[-5%] bottom-[-8%] w-[280px] h-[280px] z-0">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={current}
+            src={airFilterSlides[current].src}
+            alt={airFilterSlides[current].alt}
+            initial={{ opacity: 0, scale: 0.85, y: 20 }}
+            animate={{ opacity: 1, scale: 1,    y: 0  }}
+            exit={{    opacity: 0, scale: 0.85, y: -20 }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            className="w-full h-full object-contain drop-shadow-2xl"
+          />
+        </AnimatePresence>
+      </div>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-5 right-6 flex gap-2 z-10">
+        {airFilterSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-white scale-125' : 'bg-white/40'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export const Promotions = ({ showBanners = true, showGrid = true }: { showBanners?: boolean, showGrid?: boolean }) => {
   const categories = [
     {
-      title: 'TOOLS',
+      title: 'CLUTCH ASSEMBLY',
       subtitle: 'You need',
       tag: 'Top brands',
       tagColor: 'bg-[#004b7c]', // Dark blue tag on green
       bgColor: 'bg-[#1cb23c]', // Vibrant green
-      image: 'https://enovathemes.com/mobex/wp-content/uploads/Care-Kit.webp',
+      image: '/images/clean_clutch_assembly.png',
       buttonText: 'Shop now'
     },
     {
-      title: 'ENGINE OIL',
+      title: 'LOCKS',
       subtitle: 'Run smoothly!',
       tag: 'Up to 40% Off',
       tagColor: 'bg-[#1cb23c]', // Green tag on blue
       bgColor: 'bg-[#004b7c]', // Deep blue
-      image: 'https://enovathemes.com/mobex/wp-content/uploads/Oils-and-fluids.webp',
+      image: '/images/locks_keys.png',
       buttonText: 'Shop now'
     },
     {
-      title: 'BUY 1 GET 1',
+      title: 'BLOCK ASSEMBLY',
       subtitle: 'FREE',
       tag: 'Big sale',
       tagColor: 'bg-[#ea1d22]', // Red tag on red
       bgColor: 'bg-[#bc3120]', // Rusty Red
-      image: 'https://enovathemes.com/mobex/wp-content/uploads/Suspension.webp',
+      image: '/images/block_assembly.png',
       buttonText: 'Shop now'
     }
   ];
@@ -80,48 +160,19 @@ export const Promotions = ({ showBanners = true, showGrid = true }: { showBanner
                 </Link>
               </div>
               {/* Branded Headlight Image */}
-              <div className="absolute right-0 bottom-0 w-[55%] md:w-1/2 h-full z-0">
+              <div className="absolute right-0 bottom-0 w-[45%] md:w-[40%] h-full z-0 flex items-end justify-end pb-2 pr-4">
                 <img 
-                  src="https://enovathemes.com/mobex/wp-content/uploads/banner8-img.webp" 
+                  src="/images/shock_absorber.png" 
                   alt="Mega Sale"
-                  className="w-full h-full object-cover md:object-contain object-right-bottom transition-transform duration-700 group-hover:scale-105"
+                  className="h-[90%] w-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-2xl"
                 />
               </div>
               {/* Subtle overlay to ensure text contrast */}
               <div className="absolute inset-0 bg-linear-to-r from-black via-black/40 to-transparent z-[5]" />
             </motion.div>
 
-            {/* Air Filter Banner - Only visible here on Desktop */}
-            <motion.div 
-              className="hidden lg:flex relative h-[450px] bg-[#ea1d22] rounded-[40px] overflow-hidden flex-col justify-center group p-12 lg:col-span-1"
-            >
-              <div className="relative z-10">
-                <span className="bg-[#bc3120] text-white text-[10px] font-black px-2.5 py-1 rounded w-fit mb-5 inline-block uppercase tracking-wider">
-                  Big Sales!
-                </span>
-                <h3 className="text-6xl font-black text-black uppercase tracking-tight leading-none mb-3">
-                  AIR FILTERS
-                </h3>
-                <p className="text-black font-bold text-lg mb-8 uppercase tracking-widest opacity-80">
-                  Premium quality
-                </p>
-                <Link 
-                  href="/shop?q=air+filter"
-                  className="inline-flex items-center justify-center bg-white text-black px-8 py-3.5 rounded-xl font-black hover:bg-black hover:text-white transition-all text-sm shadow-md gap-3 w-fit"
-                >
-                  Shop now
-                  <ArrowRight size={18} strokeWidth={3} />
-                </Link>
-              </div>
-              {/* Asset Image */}
-              <div className="absolute right-[-10%] bottom-[-5%] w-[320px] h-[320px] z-0 transition-transform duration-700 group-hover:scale-105">
-                <img 
-                  src="https://enovathemes.com/mobex/wp-content/uploads/Air-conditioning.webp" 
-                  alt="Air Filter"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </motion.div>
+            {/* Air Filter Banner - Slider - Only visible here on Desktop */}
+            <AirFilterSlider />
           </div>
         )}
 

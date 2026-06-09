@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { 
+import {
   Send,
   MapPin,
   Phone,
@@ -18,7 +18,7 @@ import {
   Youtube,
 } from '@/components/shared/SocialIcons';
 import { cn } from '@/lib/utils';
- 
+
 export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) => {
   const [openSection, setOpenSection] = useState<string>('');
 
@@ -29,10 +29,10 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
   return (
     <footer className="bg-[#111111] text-white pt-20 pb-40 md:pb-10">
       <div className="container mx-auto px-4">
-        
+
         {/* Desktop Footer (Hidden on Mobile) */}
         <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
-          
+
           {/* Variant Main: Logo & Welcome Info */}
           {variant === 'main' ? (
             <div className="lg:col-span-4 space-y-8">
@@ -41,13 +41,13 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
               </Link>
               <div className="space-y-6">
                 <p className="text-xl font-black text-white leading-tight max-w-[320px]">
-                  With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!
+                  With over 30+ brands nationwide and 130,000 parts available Baladex Global Auto Parts.
                 </p>
                 <p className="text-sm font-medium text-gray-500 leading-relaxed max-w-[340px]">
                   We offer service parts at very competitive prices with Free Delivery across the whole of the USA.
                 </p>
-                <Link 
-                  href="/shop" 
+                <Link
+                  href="/shop"
                   className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-accent text-accent rounded-xl text-xs font-black uppercase tracking-widest hover:bg-accent hover:text-dark-blue transition-all"
                 >
                   Discover more <ChevronRight size={16} />
@@ -63,11 +63,11 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
               <div className="flex gap-4">
                 {[
-                  { name: 'Facebook',  Icon: Facebook  },
+                  { name: 'Facebook', Icon: Facebook },
                   { name: 'Instagram', Icon: Instagram },
-                  { name: 'Linkedin',  Icon: Linkedin  },
-                  { name: 'Twitter',   Icon: Twitter   },
-                  { name: 'Youtube',   Icon: Youtube   },
+                  { name: 'Linkedin', Icon: Linkedin },
+                  { name: 'Twitter', Icon: Twitter },
+                  { name: 'Youtube', Icon: Youtube },
                 ].map(({ name, Icon }) => (
                   <Link key={name} href="#" className="w-5 h-5 text-gray-500 hover:text-accent transition-colors" title={name}>
                     <Icon className="w-full h-full" strokeWidth={2} />
@@ -80,8 +80,8 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
                   What&apos;s inside: new arrivals, exclusive sales, truck news and more!
                 </p>
                 <div className="relative group max-w-[280px]">
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     placeholder="Email address"
                     className="w-full bg-[#1A1A1A] border-none rounded-xl h-14 pl-6 pr-14 text-sm font-medium focus:ring-2 focus:ring-accent transition-all outline-none"
                   />
@@ -140,46 +140,46 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
           {/* Contact Section */}
           <div className={cn("space-y-8", variant === 'main' ? "lg:col-span-4" : "lg:col-span-4")}>
-             <div className="space-y-8">
+            <div className="space-y-8">
 
-                <div className="space-y-8">
-                  <div className="flex gap-4 group">
-                    <div className="w-12 h-12 shrink-0 bg-[#1A1A1A] rounded-2xl flex items-center justify-center">
-                      <MapPin size={24} className="text-accent group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div className="text-[14px] leading-snug font-medium text-gray-400">
-                      <span className="block text-gray-200 font-bold mb-1">Our Location</span>
-                      7031 N 35th Ave, Phoenix
-                      <span className="block italic opacity-60">Arkansas United States</span>
-                    </div>
+              <div className="space-y-8">
+                <div className="flex gap-4 group">
+                  <div className="w-12 h-12 shrink-0 bg-[#1A1A1A] rounded-2xl flex items-center justify-center">
+                    <MapPin size={24} className="text-accent group-hover:scale-110 transition-transform" />
                   </div>
-
-                  <div className="flex gap-4 group">
-                    <div className="w-12 h-12 shrink-0 bg-[#1A1A1A] rounded-2xl flex items-center justify-center">
-                      <Phone size={24} className="text-accent group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div className="text-[14px] leading-snug font-medium text-gray-400">
-                      <span className="block text-gray-200 font-bold mb-1">Call us between 8 AM - 10 PM</span>
-                      <a href="tel:+919737442444" className="block font-black text-2xl text-accent tracking-tighter hover:text-white transition-colors">97374 42444</a>
-                    </div>
+                  <div className="text-[14px] leading-snug font-medium text-gray-400">
+                    <span className="block text-gray-200 font-bold mb-1">Our Location</span>
+                   Sardar Vallabhbhai patal road astoida AMD
+                    <span className="block italic opacity-60">Arkansas United States</span>
                   </div>
-
-                  <a 
-                    href="https://wa.me/919737442444" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex gap-4 group cursor-pointer"
-                  >
-                    <div className="w-12 h-12 shrink-0 bg-[#1A1A1A] rounded-2xl flex items-center justify-center">
-                      <MessageSquare size={24} className="text-accent group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div>
-                      <h6 className="text-[16px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
-                      <p className="text-[13px] font-bold text-gray-500">Chat with an Expert</p>
-                    </div>
-                  </a>
                 </div>
-             </div>
+
+                <div className="flex gap-4 group">
+                  <div className="w-12 h-12 shrink-0 bg-[#1A1A1A] rounded-2xl flex items-center justify-center">
+                    <Phone size={24} className="text-accent group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div className="text-[14px] leading-snug font-medium text-gray-400">
+                    <span className="block text-gray-200 font-bold mb-1">Call us between 8 AM - 10 PM</span>
+                    <a href="tel:+919737442444" className="block font-black text-2xl text-accent tracking-tighter hover:text-white transition-colors">97374 42444</a>
+                  </div>
+                </div>
+
+                <a
+                  href="https://wa.me/919737442444"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-4 group cursor-pointer"
+                >
+                  <div className="w-12 h-12 shrink-0 bg-[#1A1A1A] rounded-2xl flex items-center justify-center">
+                    <MessageSquare size={24} className="text-accent group-hover:scale-110 transition-transform" />
+                  </div>
+                  <div>
+                    <h6 className="text-[16px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
+                    <p className="text-[13px] font-bold text-gray-500">Chat with an Expert</p>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -187,12 +187,12 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
         <div className="md:hidden space-y-12">
           {/* Top Intro */}
           <div className="text-center space-y-4">
-             <h4 className="text-[15px] font-black leading-tight px-4">
-               With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!
-             </h4>
-             <p className="text-[13px] font-medium text-gray-500 leading-relaxed px-4">
-               We offer service parts at very competitive prices with Free Delivery across the whole of the USA.
-             </p>
+            <h4 className="text-[15px] font-black leading-tight px-4">
+              With over 250+ branches nationwide and 130,000 parts available Baladex Global Auto Parts is the USA&apos;s number 1 supplier!
+            </h4>
+            <p className="text-[13px] font-medium text-gray-500 leading-relaxed px-4">
+              We offer service parts at very competitive prices with Free Delivery across the whole of the USA.
+            </p>
           </div>
 
           <div className="h-px bg-gray-800/50 mx-4" />
@@ -240,44 +240,44 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
 
             <div className="space-y-8 w-full max-w-sm mx-auto">
-               {/* Location */}
-               <div className="flex items-center gap-5 px-4">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
-                    <MapPin size={24} className="text-accent" />
-                  </div>
-                  <div className="text-[14px] font-black text-white leading-snug">
-                    <span className="block text-gray-500 font-bold text-[10px] uppercase tracking-wider mb-0.5">Our Location</span>
-                    7031 N 35th Ave, Phoenix <br />
-                    <span className="text-gray-500 font-bold text-[12px]">Arkansas United States</span>
-                  </div>
-               </div>
+              {/* Location */}
+              <div className="flex items-center gap-5 px-4">
+                <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
+                  <MapPin size={24} className="text-accent" />
+                </div>
+                <div className="text-[14px] font-black text-white leading-snug">
+                  <span className="block text-gray-500 font-bold text-[10px] uppercase tracking-wider mb-0.5">Our Location</span>
+                  7031 N 35th Ave, Phoenix <br />
+                  <span className="text-gray-500 font-bold text-[12px]">Arkansas United States</span>
+                </div>
+              </div>
 
-               {/* Phone */}
-               <div className="flex items-center gap-5 px-4">
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
-                    <Phone size={24} className="text-accent" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Call us 8 AM - 10 PM</p>
-                    <a href="tel:+919737442444" className="text-xl font-black text-accent tracking-tighter leading-none block">97374 42444</a>
-                  </div>
-               </div>
+              {/* Phone */}
+              <div className="flex items-center gap-5 px-4">
+                <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
+                  <Phone size={24} className="text-accent" />
+                </div>
+                <div className="space-y-0.5">
+                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Call us 8 AM - 10 PM</p>
+                  <a href="tel:+919737442444" className="text-xl font-black text-accent tracking-tighter leading-none block">97374 42444</a>
+                </div>
+              </div>
 
-               {/* Live Chat */}
-                <a 
-                  href="https://wa.me/919737442444"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-5 px-4 group cursor-pointer"
-                >
-                  <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
-                    <MessageSquare size={24} className="text-accent group-hover:scale-110 transition-transform" />
-                  </div>
-                  <div className="space-y-0.5">
-                    <h6 className="text-[15px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
-                    <p className="text-[12px] font-bold text-gray-500">Chat with an Expert</p>
-                  </div>
-                </a>
+              {/* Live Chat */}
+              <a
+                href="https://wa.me/919737442444"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-5 px-4 group cursor-pointer"
+              >
+                <div className="w-12 h-12 shrink-0 rounded-2xl bg-dark-blue/20 flex items-center justify-center">
+                  <MessageSquare size={24} className="text-accent group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="space-y-0.5">
+                  <h6 className="text-[15px] font-black text-white group-hover:text-accent transition-colors">Live chat</h6>
+                  <p className="text-[12px] font-bold text-gray-500">Chat with an Expert</p>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -288,21 +288,21 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
           {/* Mobile Copyright and Stacked Links */}
           <div className="bg-[#0A0A0A] -mx-4 py-8 px-4 text-center space-y-6">
-             <div className="flex justify-center gap-6 mb-2">
-                {[Facebook, Instagram, Linkedin, Twitter, Youtube].map((Icon, idx) => (
-                  <Link key={idx} href="#" className="w-5 h-5 text-gray-500 hover:text-white transition-colors">
-                    <Icon className="w-full h-full" />
-                  </Link>
-                ))}
-             </div>
-             <p className="text-[13px] font-bold text-gray-500 mb-6">
-               Copyright © 2026 <span className="text-white">Baladex Global</span>. All Rights Reserved
-             </p>
-             <div className="flex flex-col gap-4">
-               {['Terms of Use', 'Privacy Policy', 'Interest-Based Ads', 'Accessibility'].map(item => (
-                 <Link key={item} href="#" className="text-[13px] font-bold text-gray-500">{item}</Link>
-               ))}
-             </div>
+            <div className="flex justify-center gap-6 mb-2">
+              {[Facebook, Instagram, Linkedin, Twitter, Youtube].map((Icon, idx) => (
+                <Link key={idx} href="#" className="w-5 h-5 text-gray-500 hover:text-white transition-colors">
+                  <Icon className="w-full h-full" />
+                </Link>
+              ))}
+            </div>
+            <p className="text-[13px] font-bold text-gray-500 mb-6">
+              Copyright © 2026 <span className="text-white">Baladex Global</span>. All Rights Reserved
+            </p>
+            <div className="flex flex-col gap-4">
+              {['Terms of Use', 'Privacy Policy', 'Interest-Based Ads', 'Accessibility'].map(item => (
+                <Link key={item} href="#" className="text-[13px] font-bold text-gray-500">{item}</Link>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -314,33 +314,33 @@ export const Footer = ({ variant = 'main' }: { variant?: 'main' | 'product' }) =
 
 
           <div className="border-t border-gray-800 pt-8 flex flex-wrap justify-between items-center gap-4">
-             <div className="flex items-center gap-8">
-               <p className="text-[13px] font-bold text-gray-500">
-                 Copyright © 2026 <span className="text-white">Baladex Global</span>. All Rights Reserved
-               </p>
-               
-               {variant === 'main' && (
-                 <div className="flex gap-4 border-l border-gray-800 pl-8">
-                   {[
-                     { name: 'Facebook',  Icon: Facebook  },
-                     { name: 'Instagram', Icon: Instagram },
-                     { name: 'Linkedin',  Icon: Linkedin  },
-                     { name: 'Twitter',   Icon: Twitter   },
-                     { name: 'Youtube',   Icon: Youtube   },
-                   ].map(({ name, Icon }) => (
-                     <Link key={name} href="#" className="w-4 h-4 text-gray-500 hover:text-white transition-colors" title={name}>
-                       <Icon className="w-full h-full" />
-                     </Link>
-                   ))}
-                 </div>
-               )}
-             </div>
+            <div className="flex items-center gap-8">
+              <p className="text-[13px] font-bold text-gray-500">
+                Copyright © 2026 <span className="text-white">Baladex Global</span>. All Rights Reserved
+              </p>
 
-             <div className="flex gap-6">
-                {['Terms of Use', 'Privacy Policy', 'Interest-Based Ads', 'Accessibility'].map((item) => (
-                  <Link key={item} href="#" className="text-[13px] font-bold text-gray-500 hover:text-white transition-colors">{item}</Link>
-                ))}
-             </div>
+              {variant === 'main' && (
+                <div className="flex gap-4 border-l border-gray-800 pl-8">
+                  {[
+                    { name: 'Facebook', Icon: Facebook },
+                    { name: 'Instagram', Icon: Instagram },
+                    { name: 'Linkedin', Icon: Linkedin },
+                    { name: 'Twitter', Icon: Twitter },
+                    { name: 'Youtube', Icon: Youtube },
+                  ].map(({ name, Icon }) => (
+                    <Link key={name} href="#" className="w-4 h-4 text-gray-500 hover:text-white transition-colors" title={name}>
+                      <Icon className="w-full h-full" />
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="flex gap-6">
+              {['Terms of Use', 'Privacy Policy', 'Interest-Based Ads', 'Accessibility'].map((item) => (
+                <Link key={item} href="#" className="text-[13px] font-bold text-gray-500 hover:text-white transition-colors">{item}</Link>
+              ))}
+            </div>
           </div>
         </div>
 

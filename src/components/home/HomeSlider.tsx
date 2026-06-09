@@ -9,42 +9,21 @@ import { cn } from '@/lib/utils';
 const slides = [
   {
     id: 1,
-    title: "Premium Helmets",
-    subtitle: "RIDE WITH CONFIDENCE",
-    description: "Safety meets style with our latest range of carbon fiber helmets.",
-    image: "/images/slider-helmet.png",
-    assets: [
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-4.webp",
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-5.webp",
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-6.webp"
-    ],
+    title: "",
+    subtitle: "",
+    description: "",
+    image: "/images/helmets.png",
+    assets: [],
     buttonText: "Shop now",
     buttonLink: "/shop?category=helmets"
   },
   {
-    id: 2,
-    title: "Engine Mastery",
-    subtitle: "MAXIMUM PERFORMANCE",
-    description: "Premium motorcycle oils engineered for high RPM and extreme heat.",
-    image: "/images/slider-oil.png",
-    assets: [
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-1.webp",
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-2.webp",
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-3.webp"
-    ],
-    buttonText: "Shop now",
-    buttonLink: "/shop?category=oil"
-  },
-  {
     id: 3,
-    title: "Sport Tires",
-    subtitle: "UNMATCHED GRIP",
-    description: "Dominate the asphalt with our selection of performance tires and gold chains.",
-    image: "/images/slider-tires.png",
-    assets: [
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-7.webp",
-      "https://enovathemes.com/mobex/wp-content/uploads/slider-asset-8.webp"
-    ],
+    title: "",
+    subtitle: "",
+    description: "",
+    image: "/images/rockchanin.png",
+    assets: [],
     buttonText: "Shop now",
     buttonLink: "/shop?category=tires"
   }
@@ -89,15 +68,21 @@ export const HomeSlider = () => {
                     transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
                     className="max-w-[85%] lg:max-w-[70%]"
                   >
-                    <h2 className="text-3xl lg:text-8xl font-outfit font-black text-white uppercase leading-[0.9] mb-2 drop-shadow-lg tracking-tighter">
-                      {slides[currentSlide].title}
-                    </h2>
-                    <h3 className="text-lg lg:text-4xl font-outfit font-black text-white uppercase mb-4 drop-shadow-md">
-                      {slides[currentSlide].subtitle}
-                    </h3>
-                    <p className="text-white text-xs lg:text-xl font-medium mb-6 lg:mb-8 whitespace-pre-line drop-shadow-sm opacity-90 line-clamp-2 lg:line-clamp-none">
-                      {slides[currentSlide].description}
-                    </p>
+                    {slides[currentSlide].title && (
+                      <h2 className="text-3xl lg:text-8xl font-outfit font-black text-white uppercase leading-[0.9] mb-2 drop-shadow-lg tracking-tighter">
+                        {slides[currentSlide].title}
+                      </h2>
+                    )}
+                    {slides[currentSlide].subtitle && (
+                      <h3 className="text-lg lg:text-4xl font-outfit font-black text-white uppercase mb-4 drop-shadow-md">
+                        {slides[currentSlide].subtitle}
+                      </h3>
+                    )}
+                    {slides[currentSlide].description && (
+                      <p className="text-white text-xs lg:text-xl font-medium mb-6 lg:mb-8 whitespace-pre-line drop-shadow-sm opacity-90 line-clamp-2 lg:line-clamp-none">
+                        {slides[currentSlide].description}
+                      </p>
+                    )}
                     <Link 
                       href={slides[currentSlide].buttonLink}
                       className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 lg:px-10 lg:py-4 rounded-xl font-black hover:bg-black hover:text-white transition-all duration-300 text-sm lg:text-lg shadow-xl"
@@ -107,22 +92,7 @@ export const HomeSlider = () => {
                     </Link>
                   </motion.div>
 
-                  {/* Price Badge for Wiper Blades */}
-                  {currentSlide === 0 && (
-                    <motion.div
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.8, type: 'spring' }}
-                      className="absolute right-[10%] top-1/2 -translate-y-1/2 lg:right-[25%] lg:top-[60%] w-24 h-24 lg:w-32 lg:h-32 bg-[#cc3300] rounded-full flex flex-col items-center justify-center text-white border-4 border-white/20 shadow-2xl z-30"
-                    >
-                      <span className="text-[10px] lg:text-xs font-bold uppercase tracking-widest opacity-80">From</span>
-                      <div className="flex items-start">
-                        <span className="text-xl lg:text-2xl font-black mt-1">$</span>
-                        <span className="text-3xl lg:text-5xl font-black leading-none">3</span>
-                        <span className="text-lg lg:text-xl font-black mt-1">.09</span>
-                      </div>
-                    </motion.div>
-                  )}
+
                 </div>
 
                 {/* Floating Assets Overlay */}
@@ -196,7 +166,7 @@ export const HomeSlider = () => {
                 </Link>
               </div>
               <img 
-                src="https://enovathemes.com/mobex/wp-content/uploads/banner5-img.webp" 
+                src="/images/bgsolance.png" 
                 alt="Battery"
                 className="absolute right-[-10px] bottom-[-10px] lg:right-[-20px] lg:bottom-[-20px] w-32 lg:w-64 h-auto object-contain transition-transform duration-500 group-hover:scale-110"
               />
@@ -217,9 +187,9 @@ export const HomeSlider = () => {
                 </Link>
               </div>
               <img 
-                src="https://enovathemes.com/mobex/wp-content/uploads/banner7-img.webp" 
+                src="/images/two_motorcycle_tyres.png" 
                 alt="Tires"
-                className="absolute right-[-10px] bottom-[-10px] lg:right-[-30px] lg:bottom-[-10px] w-32 lg:w-72 h-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                className="absolute right-[-10px] bottom-[-10px] lg:right-[-10px] lg:bottom-[0px] w-24 lg:w-48 h-auto object-contain transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
             </div>

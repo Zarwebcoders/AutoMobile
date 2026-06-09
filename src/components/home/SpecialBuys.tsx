@@ -17,11 +17,11 @@ export const SpecialBuys = () => {
         >
           <div className="absolute inset-0 bg-[url('/images/special-buys-bg.png')] bg-cover bg-center opacity-40 mix-blend-overlay" />
           {/* Product Image - Top on Mobile, Left on Desktop */}
-          <div className="relative md:absolute md:left-20 md:top-1/2 md:-translate-y-1/2 w-full max-w-[320px] md:max-w-[500px] mb-8 md:mb-0 z-20 pointer-events-none">
+          <div className="relative md:absolute md:left-24 md:top-1/2 md:-translate-y-1/2 w-full max-w-[300px] md:max-w-[340px] h-[340px] mb-8 md:mb-0 z-20 pointer-events-none flex items-center justify-center">
             <img 
-              src="https://enovathemes.com/mobex/wp-content/uploads/banner13-img.webp" 
+              src="/images/blue_oil_bottle.png" 
               alt="Special Buys Products"
-              className="w-full h-auto object-contain drop-shadow-2xl"
+              className="max-h-full w-auto object-contain drop-shadow-2xl"
             />
           </div>
 

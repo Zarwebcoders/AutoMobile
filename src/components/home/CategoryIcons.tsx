@@ -8,8 +8,8 @@ import { cn } from '@/lib/utils';
 const CATEGORIES = [
   { name: 'JPM', image: '/assets/JPM.svg', pdf: '/assets/JPM.pdf' },
   { name: 'MK', image: '/assets/MK.png', pdf: '/assets/MK.pdf' },
-  { name: 'ROYAL ENFIELD', image: '/assets/ROYALENFIELD.jpg', pdf: '/assets/ROYALENFIELD.pdf' },
-  { name: 'SPACO', image: '/assets/SPACO.png', pdf: '/assets/SPACO.pdf' },
+  { name: 'SANDHAR', image: '/assets/SANDHAR.png', pdf: '/assets/SANDHAR.pdf' },
+  { name: 'ENDURANCE', image: '/assets/ENDURANCE.png', pdf: '/assets/ENDURANCE.pdf' },
   { name: 'Varroc', image: '/assets/Varroc.webp', pdf: '/assets/Varroc.pdf' },
   { name: 'YANGO', image: '/assets/YANGO.png', pdf: '/assets/YANGO.pdf' },
 ];

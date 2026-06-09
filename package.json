@@ -5,7 +5,8 @@
   "scripts": {
     "dev:frontend": "next dev",
     "dev:backend": "cd backend && node server.js",
-    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:admin": "npm run --prefix admin dev",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:admin\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

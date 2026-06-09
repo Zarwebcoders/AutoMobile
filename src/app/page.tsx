@@ -8,7 +8,6 @@ import { AirFilterBanner } from "@/components/home/AirFilterBanner";
 import { Promotions } from "@/components/home/Promotions";
 import { SpecialBuys } from "@/components/home/SpecialBuys";
 
-import { ContentHub } from "@/components/home/ContentHub";
 import { Newsletter } from "@/components/home/Newsletter";
 import { Footer } from "@/components/layout/Footer";
 
@@ -45,7 +44,6 @@ export default function Home() {
       <div className="lg:hidden">
         <Promotions />
       </div>
-      <ContentHub />
       <Newsletter />
       <Footer variant="main" />
 
